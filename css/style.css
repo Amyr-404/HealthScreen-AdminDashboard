@@ -6946,105 +6946,392 @@ td {
 }
 
 /* =========================================================
-   MOBILE RESPONSIVE DESIGN
+   MOBILE FLOATING NAVIGATION
    ========================================================= */
 
 @media (max-width: 768px) {
 
-    /* ---------- GLOBAL ---------- */
+    /* -----------------------------------------------------
+       MAIN CONTENT
+       ----------------------------------------------------- */
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    .main-content {
+    .main-content,
+    .sidebar:hover + .main-content,
+    .sidebar.mobile-expanded + .main-content {
         margin-left: 0 !important;
         width: 100% !important;
-        min-width: 0;
+        max-width: 100% !important;
     }
 
-    /* ---------- MOBILE SIDEBAR ---------- */
 
-.sidebar {
-    width: 64px !important;
-    min-width: 64px !important;
-    max-width: 64px !important;
-}
+    /* -----------------------------------------------------
+       SIDEBAR CONTAINER
+       ----------------------------------------------------- */
 
-.sidebar:hover {
-    width: 64px !important;
-}
+    .sidebar,
+    .sidebar:hover,
+    .sidebar.mobile-expanded {
+        position: static !important;
 
-/* Main content must leave room for the sidebar */
-.main-content {
-    margin-left: 64px !important;
-    width: calc(100% - 64px) !important;
-    max-width: calc(100% - 64px);
-}
+        width: 0 !important;
+        min-width: 0 !important;
+        max-width: 0 !important;
 
-/* Keep only the icon version of the logo */
-.sidebar-logo-full {
-    display: none !important;
-}
+        height: 0 !important;
+        min-height: 0 !important;
 
-.sidebar-logo-icon {
-    display: block !important;
-    width: 38px !important;
-    height: 38px !important;
-}
+        padding: 0 !important;
+        margin: 0 !important;
 
-/* Navigation icons */
-.sidebar .nav-item {
-    justify-content: center;
-    padding: 10px 8px;
-}
+        overflow: visible !important;
 
-.sidebar .nav-item span:not(.nav-icon) {
-    display: none !important;
-}
+        background: transparent !important;
 
-.sidebar .nav-icon-image {
-    width: 30px !important;
-    height: 30px !important;
-}
+        z-index: 1000;
+    }
 
-/* Profile */
-.sidebar .admin-profile {
-    justify-content: center !important;
-}
 
-.sidebar .profile-info {
-    display: none !important;
-}
+    /* -----------------------------------------------------
+       HIDE DESKTOP LOGO
+       ----------------------------------------------------- */
 
-/* Logout */
-.sidebar .logout {
-    width: 44px !important;
-    height: 40px !important;
-    margin: 0 auto;
-    padding: 0 !important;
-    justify-content: center;
-}
+    .sidebar .logo-area,
+    .sidebar:hover .logo-area,
+    .sidebar.mobile-expanded .logo-area {
+        display: none !important;
+    }
 
-.sidebar .logout span:last-child {
-    display: none !important;
-}
 
-/* System status */
-.sidebar .system-status {
-    justify-content: center;
-    padding: 10px 6px;
-    margin: 8px 6px;
-}
+    /* -----------------------------------------------------
+       TOP FLOATING NAVIGATION
+       ----------------------------------------------------- */
 
-.sidebar .system-status > div {
-    display: none !important;
-}
+    .sidebar .navigation,
+    .sidebar:hover .navigation,
+    .sidebar.mobile-expanded .navigation {
 
-    /* ---------- PAGE SPACING ---------- */
+        position: fixed !important;
+
+        top: 10px;
+        left: 10px;
+        right: 10px;
+
+        width: auto !important;
+        height: 54px;
+
+        margin: 0 !important;
+        padding: 6px !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: space-around !important;
+
+        gap: 3px;
+
+        background: white;
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.12);
+
+        z-index: 1100;
+
+        overflow: hidden;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE NAV ITEMS
+       ----------------------------------------------------- */
+
+    .sidebar .navigation .nav-item,
+    .sidebar:hover .navigation .nav-item,
+    .sidebar.mobile-expanded .navigation .nav-item {
+
+        width: auto !important;
+        height: 42px !important;
+
+        flex: 1 1 0;
+
+        margin: 0 !important;
+        padding: 5px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        border-radius: 9px;
+
+        white-space: nowrap;
+    }
+
+
+    /* Hide navigation labels */
+    .sidebar .navigation .nav-item span:not(.nav-icon),
+    .sidebar:hover .navigation .nav-item span:not(.nav-icon),
+    .sidebar.mobile-expanded .navigation .nav-item span:not(.nav-icon) {
+        display: none !important;
+    }
+
+
+    /* Navigation icons */
+    .sidebar .navigation .nav-icon-image,
+    .sidebar:hover .navigation .nav-icon-image,
+    .sidebar.mobile-expanded .navigation .nav-icon-image {
+
+        width: 28px !important;
+        height: 28px !important;
+
+        margin: 0 !important;
+
+        object-fit: contain;
+    }
+
+
+    /* Dashboard icon special size */
+    .sidebar .navigation .nav-item:first-child .nav-icon-image,
+    .sidebar:hover .navigation .nav-item:first-child .nav-icon-image,
+    .sidebar.mobile-expanded .navigation .nav-item:first-child .nav-icon-image {
+        transform: scale(1.25);
+    }
+
+
+    /* Hide Settings from top navigation */
+    .sidebar .navigation .nav-item:last-child,
+    .sidebar:hover .navigation .nav-item:last-child,
+    .sidebar.mobile-expanded .navigation .nav-item:last-child {
+        display: none !important;
+    }
+
+
+    /* Active navigation */
+    .sidebar .navigation .nav-item.active,
+    .sidebar:hover .navigation .nav-item.active,
+    .sidebar.mobile-expanded .navigation .nav-item.active {
+        background: rgba(25, 118, 210, 0.10) !important;
+    }
+
+
+    /* -----------------------------------------------------
+       SYSTEM ONLINE — BOTTOM FLOATING
+       ----------------------------------------------------- */
+
+    .sidebar .system-status,
+    .sidebar:hover .system-status,
+    .sidebar.mobile-expanded .system-status {
+
+        position: fixed !important;
+
+        left: 10px;
+        bottom: 10px;
+
+        width: auto !important;
+        height: 42px !important;
+
+        margin: 0 !important;
+        padding: 0 12px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        background: white;
+
+        border-radius: 12px;
+
+        box-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.12);
+
+        z-index: 1100;
+    }
+
+
+    .sidebar .system-status .status-dot,
+    .sidebar:hover .system-status .status-dot,
+    .sidebar.mobile-expanded .system-status .status-dot {
+        margin-right: 8px !important;
+    }
+
+
+    .sidebar .system-status > div,
+    .sidebar:hover .system-status > div,
+    .sidebar.mobile-expanded .system-status > div {
+        display: flex !important;
+
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    .sidebar .system-status strong,
+    .sidebar:hover .system-status strong,
+    .sidebar.mobile-expanded .system-status strong {
+        font-size: 10px;
+    }
+
+
+    .sidebar .system-status small,
+    .sidebar:hover .system-status small,
+    .sidebar.mobile-expanded .system-status small {
+        font-size: 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       BOTTOM ADMIN AREA
+       ----------------------------------------------------- */
+
+    .sidebar .sidebar-bottom,
+    .sidebar:hover .sidebar-bottom,
+    .sidebar.mobile-expanded .sidebar-bottom {
+
+        position: fixed !important;
+
+        right: 10px;
+        bottom: 10px;
+
+        width: auto !important;
+        height: 42px;
+
+        margin: 0 !important;
+        padding: 0 6px;
+
+        display: flex !important;
+        flex-direction: row !important;
+
+        align-items: center !important;
+        gap: 6px;
+
+        background: white;
+
+        border-radius: 12px;
+
+        box-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.12);
+
+        z-index: 1100;
+    }
+
+
+    /* -----------------------------------------------------
+       ADMIN PROFILE
+       ----------------------------------------------------- */
+
+    .sidebar .admin-profile,
+    .sidebar:hover .admin-profile,
+    .sidebar.mobile-expanded .admin-profile {
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    .sidebar .profile-avatar,
+    .sidebar:hover .profile-avatar,
+    .sidebar.mobile-expanded .profile-avatar {
+
+        width: 30px !important;
+        height: 30px !important;
+
+        flex-shrink: 0;
+    }
+
+
+    .sidebar .profile-info,
+    .sidebar:hover .profile-info,
+    .sidebar.mobile-expanded .profile-info {
+
+        display: flex !important;
+
+        flex-direction: column;
+
+        margin-left: 7px;
+    }
+
+
+    .sidebar .profile-info strong {
+        font-size: 10px;
+    }
+
+
+    .sidebar .profile-info span {
+        font-size: 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       SETTINGS — BOTTOM
+       ----------------------------------------------------- */
+
+    .sidebar .sidebar-bottom::before {
+
+        content: "⚙";
+
+        width: 30px;
+        height: 30px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        margin-right: 2px;
+
+        font-size: 18px;
+
+        color: #1976d2;
+
+        background: #eef5ff;
+
+        border-radius: 8px;
+
+        cursor: pointer;
+    }
+
+
+    /* -----------------------------------------------------
+       LOGOUT
+       ----------------------------------------------------- */
+
+    .sidebar .logout,
+    .sidebar:hover .logout,
+    .sidebar.mobile-expanded .logout {
+
+        width: 32px !important;
+        height: 32px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        border-radius: 8px;
+    }
+
+
+    .sidebar .logout span:last-child,
+    .sidebar:hover .logout span:last-child,
+    .sidebar.mobile-expanded .logout span:last-child {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       PAGE CONTENT
+       ----------------------------------------------------- */
 
     .dashboard,
     .patients-page,
@@ -7054,589 +7341,16 @@ td {
     .patient-profile-page,
     .add-patient-page,
     .settings-page {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-    }
 
-    /* ---------- DASHBOARD ---------- */
-
-    .dashboard .stats-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .dashboard .content-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .dashboard .recent-panel {
-        width: 100%;
-        overflow-x: auto;
-    }
-
-    /* ---------- PATIENTS ---------- */
-
-    .patients-header {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-    }
-
-    .patients-header .add-patient-button {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .patient-tools {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-    }
-
-    .patient-tools input,
-    .patient-tools select {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .patient-panel .table-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .patient-panel table {
-        min-width: 700px;
-    }
-
-    /* ---------- SCREENING RECORDS ---------- */
-
-    .screening-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .screening-header > div:first-child {
-        max-width: 100%;
-    }
-
-    .screening-header .screening-actions {
-        width: 100%;
-    }
-
-    .screening-header .screening-actions button {
-        width: 100%;
-    }
-
-    .screening-table-container,
-    .screening-table-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .screening-table {
-        min-width: 800px;
-    }
-
-    /* ---------- PATIENT HISTORY ---------- */
-
-    .patient-history-page .history-filter-panel {
-        padding: 12px;
-    }
-
-    .patient-history-page .history-filter-panel form {
-        grid-template-columns: 1fr !important;
-    }
-
-    .patient-history-page .history-table-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .patient-history-page .history-table {
-        min-width: 700px;
-    }
-
-    /* ---------- PATIENT PROFILE ---------- */
-
-    .patient-profile-page {
-        height: auto !important;
-        min-height: 100vh !important;
-        overflow: visible !important;
-    }
-
-    .patient-profile-page .personal-info-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .patient-profile-page .measurement-grid {
-        grid-template-columns: 1fr 1fr !important;
-    }
-
-    .patient-profile-page .history-table-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .patient-profile-page .history-table {
-        min-width: 700px;
-    }
-
-    /* ---------- SCREENING RESULT ---------- */
-
-    .result-info-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .measurement-result-grid {
-        grid-template-columns: 1fr 1fr !important;
-    }
-
-    .result-actions {
-        flex-direction: column;
-    }
-
-    .result-actions button {
-        width: 100%;
-    }
-
-    /* ---------- ADD PATIENT ---------- */
-
-    .add-patient-page {
-        height: auto !important;
-        min-height: 100vh !important;
-        overflow: visible !important;
-    }
-
-    .add-patient-page .registration-panel {
-        padding: 16px;
-    }
-
-    .add-patient-page .form-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .add-patient-page .form-actions {
-        flex-direction: column;
-    }
-
-    .add-patient-page .form-actions button {
-        width: 100%;
-    }
-
-    /* ---------- REPORTS ---------- */
-
-    .reports-page-content {
-        height: auto !important;
-        min-height: 100vh !important;
-    }
-
-    .reports-page-content .report-summary-grid {
-        grid-template-columns: 1fr 1fr !important;
-    }
-
-    .reports-page-content .report-section-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .reports-page-content .recent-report-panel {
-        overflow-x: auto;
-    }
-
-    .reports-page-content .report-table {
-        min-width: 650px;
-    }
-
-    /* ---------- SETTINGS ---------- */
-
-    .settings-page {
-        height: auto !important;
-        min-height: 100vh !important;
-        overflow: visible !important;
-    }
-
-    .settings-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .settings-card.full-width .settings-option-list {
-        grid-template-columns: 1fr !important;
-    }
-
-    .settings-form {
-        grid-template-columns: 1fr !important;
-    }
-
-    .settings-actions {
-        flex-direction: column;
-    }
-
-    .settings-actions button {
-        width: 100%;
-    }
-
-}
-
-/* =========================================================
-   MOBILE SIDEBAR FIX
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    /* Keep sidebar collapsed on mobile */
-    .sidebar,
-    .sidebar:hover {
-        width: 64px !important;
-        min-width: 64px !important;
-        max-width: 64px !important;
-    }
-
-    /* Main content starts after the mobile sidebar */
-    .main-content,
-    .sidebar:hover + .main-content {
-        margin-left: 64px !important;
-        width: calc(100% - 64px) !important;
-        max-width: calc(100% - 64px) !important;
-    }
-
-    /* Logo */
-    .sidebar .sidebar-logo-full,
-    .sidebar:hover .sidebar-logo-full {
-        display: none !important;
-    }
-
-    .sidebar .sidebar-logo-icon,
-    .sidebar:hover .sidebar-logo-icon {
-        display: block !important;
-        width: 38px !important;
-        height: 38px !important;
-    }
-
-    /* Navigation */
-    .sidebar .nav-item,
-    .sidebar:hover .nav-item {
-        justify-content: center !important;
-        padding: 10px 8px !important;
-    }
-
-    .sidebar .nav-item span:not(.nav-icon),
-    .sidebar:hover .nav-item span:not(.nav-icon) {
-        display: none !important;
-    }
-
-    .sidebar .nav-icon-image,
-    .sidebar:hover .nav-icon-image {
-        width: 30px !important;
-        height: 30px !important;
-    }
-
-    /* System status */
-    .sidebar .system-status,
-    .sidebar:hover .system-status {
-        justify-content: center !important;
-        padding: 10px 6px !important;
-        margin: 8px 6px !important;
-    }
-
-    .sidebar .system-status > div,
-    .sidebar:hover .system-status > div {
-        display: none !important;
-    }
-
-    /* Administrator */
-    .sidebar .admin-profile,
-    .sidebar:hover .admin-profile {
-        justify-content: center !important;
-    }
-
-    .sidebar .profile-info,
-    .sidebar:hover .profile-info {
-        display: none !important;
-    }
-
-    /* Logout */
-    .sidebar .logout,
-    .sidebar:hover .logout {
-        width: 44px !important;
-        height: 40px !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-        justify-content: center !important;
-    }
-
-    .sidebar .logout span:last-child,
-    .sidebar:hover .logout span:last-child {
-        display: none !important;
-    }
-
-}
-
-@media (max-width: 768px) {
-
-    /* ---------- MOBILE CONTENT ---------- */
-
-    .dashboard {
-        padding: 12px 10px 20px !important;
         width: 100% !important;
+        max-width: 100% !important;
+
         box-sizing: border-box;
+
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+
+        padding-top: 76px !important;
     }
 
-    .dashboard .welcome-card {
-        width: 100%;
-        min-height: 130px;
-        padding: 18px 16px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-    }
-
-    .dashboard .welcome-card h1 {
-        font-size: 24px;
-    }
-
-    .dashboard .welcome-card p {
-        font-size: 13px;
-    }
-
-    /* Statistics */
-    .dashboard .stats-grid {
-        grid-template-columns: 1fr !important;
-        gap: 10px;
-        margin-bottom: 10px;
-    }
-
-    .dashboard .stat-card {
-        width: 100%;
-        min-height: 82px;
-        padding: 14px;
-        box-sizing: border-box;
-    }
-
-    /* Charts */
-    .dashboard .content-grid {
-        grid-template-columns: 1fr !important;
-        gap: 10px;
-    }
-
-    .dashboard .content-grid .panel {
-        width: 100%;
-        min-width: 0;
-        box-sizing: border-box;
-        padding: 14px;
-    }
-
-    .dashboard .chart {
-        width: 100%;
-        height: 190px;
-    }
-
-    /* Recent screenings */
-    .dashboard .recent-panel {
-        width: 100%;
-        min-width: 0;
-        box-sizing: border-box;
-        overflow-x: auto;
-    }
-
-}
-
-/* =========================================================
-   MOBILE SIDEBAR EXPANSION + COMPACT DASHBOARD
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    /* =========================
-       SIDEBAR
-       ========================= */
-
-    .sidebar {
-        width: 64px !important;
-        min-width: 64px !important;
-        max-width: 64px !important;
-        transition: width 0.25s ease,
-                    min-width 0.25s ease,
-                    max-width 0.25s ease !important;
-        z-index: 1000;
-    }
-
-    /* Expand sidebar when interacting with it */
-    .sidebar:focus-within {
-        width: 240px !important;
-        min-width: 240px !important;
-        max-width: 240px !important;
-    }
-
-    /* Main page remains in place */
-    .main-content,
-    .sidebar:hover + .main-content,
-    .sidebar:focus-within + .main-content {
-        margin-left: 64px !important;
-        width: calc(100% - 64px) !important;
-        max-width: calc(100% - 64px) !important;
-    }
-
-    /* ---------- LOGO ---------- */
-
-    .sidebar .sidebar-logo-full {
-        display: none !important;
-    }
-
-    .sidebar .sidebar-logo-icon {
-        display: block !important;
-        width: 38px !important;
-        height: 38px !important;
-    }
-
-    .sidebar:focus-within .sidebar-logo-icon {
-        display: none !important;
-    }
-
-    .sidebar:focus-within .sidebar-logo-full {
-        display: block !important;
-        width: 198px !important;
-        height: auto !important;
-    }
-
-    /* ---------- NAVIGATION ---------- */
-
-    .sidebar .nav-item {
-        justify-content: center !important;
-        padding: 10px 8px !important;
-    }
-
-    .sidebar .nav-item span:not(.nav-icon) {
-        display: none !important;
-    }
-
-    .sidebar .nav-icon-image {
-        width: 30px !important;
-        height: 30px !important;
-    }
-
-    /* Expanded navigation */
-
-    .sidebar:focus-within .nav-item {
-        justify-content: flex-start !important;
-        padding: 10px 16px !important;
-    }
-
-    .sidebar:focus-within .nav-item span:not(.nav-icon) {
-        display: inline !important;
-    }
-
-    /* ---------- SYSTEM STATUS ---------- */
-
-    .sidebar .system-status {
-        justify-content: center !important;
-        padding: 10px 6px !important;
-        margin: 8px 6px !important;
-    }
-
-    .sidebar .system-status > div {
-        display: none !important;
-    }
-
-    .sidebar:focus-within .system-status {
-        justify-content: flex-start !important;
-        padding: 12px 14px !important;
-        margin: 10px 16px 0 !important;
-    }
-
-    .sidebar:focus-within .system-status > div {
-        display: block !important;
-    }
-
-    /* ---------- ADMIN ---------- */
-
-    .sidebar .admin-profile {
-        justify-content: center !important;
-    }
-
-    .sidebar .profile-info {
-        display: none !important;
-    }
-
-    .sidebar:focus-within .admin-profile {
-        justify-content: flex-start !important;
-    }
-
-    .sidebar:focus-within .profile-info {
-        display: block !important;
-    }
-
-    /* ---------- LOGOUT ---------- */
-
-    .sidebar .logout {
-        width: 44px !important;
-        height: 40px !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-        justify-content: center !important;
-    }
-
-    .sidebar:focus-within .logout {
-        width: auto !important;
-        height: auto !important;
-        margin: 0 16px !important;
-        padding: 10px 16px !important;
-        justify-content: flex-start !important;
-    }
-
-    /* =========================
-       COMPACT DASHBOARD
-       ========================= */
-
-    .dashboard {
-        padding: 10px 8px 16px !important;
-    }
-
-    .dashboard .welcome-card {
-        min-height: 110px;
-        padding: 14px 16px;
-        margin-bottom: 8px;
-    }
-
-    .dashboard .welcome-card h1 {
-        font-size: 22px;
-        line-height: 1.15;
-    }
-
-    .dashboard .welcome-card p {
-        font-size: 12px;
-        line-height: 1.4;
-        margin-top: 6px;
-    }
-
-    .dashboard .stats-grid {
-        gap: 8px;
-        margin-bottom: 8px;
-    }
-
-    .dashboard .stat-card {
-        min-height: 70px;
-        padding: 10px 12px;
-    }
-
-    .dashboard .stat-card h3 {
-        font-size: 14px;
-    }
-
-    .dashboard .stat-card .stat-value {
-        font-size: 28px;
-    }
-
-    .dashboard .stat-card p {
-        font-size: 11px;
-    }
-
-    .dashboard .content-grid {
-        gap: 8px;
-    }
-
-    .dashboard .content-grid .panel {
-        padding: 12px;
-    }
 }
