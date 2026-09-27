@@ -9021,3 +9021,17 @@ td {
     }
 
 }
+
+/* =========================================================
+   MOBILE — CLEAR SPACE BELOW FLOATING TOP NAV
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .main-content,
+    .sidebar:hover + .main-content,
+    .sidebar.mobile-expanded + .main-content {
+        padding-top: 74px !important;
+    }
+
+}
