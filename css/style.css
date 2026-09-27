@@ -2620,12 +2620,11 @@ td {
     font-weight: 700;
 }
 
-.result-summary strong {
+.screening-result-page .result-summary strong {
     display: block;
     color: var(--green);
     margin-bottom: 5px;
 }
-
 .result-summary p {
     margin: 0;
 
@@ -9037,17 +9036,17 @@ td {
 }
 
 /* =========================================================
-   DASHBOARD — SCREENING RESULTS COLORS
+   DASHBOARD — SCREENING RESULTS LABEL COLORS
    ========================================================= */
 
-.dashboard .summary-normal {
-    color: #2e9d68 !important;
+.dashboard #normalPercentage + div strong {
+    color: var(--green) !important;
 }
 
-.dashboard .summary-caution {
-    color: #e6a21a !important;
+.dashboard #cautionPercentage + div strong {
+    color: var(--orange) !important;
 }
 
-.dashboard .summary-abnormal {
-    color: #d64545 !important;
+.dashboard #abnormalPercentage + div strong {
+    color: var(--red) !important;
 }
