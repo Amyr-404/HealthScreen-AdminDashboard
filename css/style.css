@@ -8845,3 +8845,57 @@ td {
     }
 
 }
+
+@media (max-width: 768px) {
+
+    .sidebar .sidebar-bottom .logout,
+    .sidebar:hover .sidebar-bottom .logout,
+    .sidebar.mobile-expanded .sidebar-bottom .logout {
+
+        width: 100px !important;
+        min-width: 100px !important;
+
+        height: 42px !important;
+        min-height: 42px !important;
+
+        padding: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        background: #f1f5f9 !important;
+        border: 1px solid #d9e1ea !important;
+        border-radius: 10px !important;
+
+        font-size: 0 !important;
+    }
+
+
+    /* Hide the existing arrow */
+    .sidebar .sidebar-bottom .logout > span,
+    .sidebar:hover .sidebar-bottom .logout > span,
+    .sidebar.mobile-expanded .sidebar-bottom .logout > span {
+
+        display: none !important;
+    }
+
+
+    /* Create the visible Logout text */
+    .sidebar .sidebar-bottom .logout::after,
+    .sidebar:hover .sidebar-bottom .logout::after,
+    .sidebar.mobile-expanded .sidebar-bottom .logout::after {
+
+        content: "Logout" !important;
+
+        display: block !important;
+
+        font-size: 13px !important;
+        font-weight: 600 !important;
+
+        line-height: 1 !important;
+
+        color: #263238 !important;
+    }
+
+}
