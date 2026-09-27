@@ -8899,3 +8899,125 @@ td {
     }
 
 }
+
+/* =========================================================
+   MOBILE FINAL FIX — LOGOUT + SETTINGS
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* LOGOUT — TEXT ONLY */
+    .sidebar .sidebar-bottom .logout,
+    .sidebar:hover .sidebar-bottom .logout,
+    .sidebar.mobile-expanded .sidebar-bottom .logout {
+
+        width: 82px !important;
+        min-width: 82px !important;
+        height: 38px !important;
+        min-height: 38px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        background: #f1f5f9 !important;
+        border: 1px solid #d9e1ea !important;
+        border-radius: 9px !important;
+
+        font-size: 0 !important;
+    }
+
+
+    /* REMOVE THE ARROW */
+    .sidebar .sidebar-bottom .logout > span:first-child,
+    .sidebar:hover .sidebar-bottom .logout > span:first-child,
+    .sidebar.mobile-expanded .sidebar-bottom .logout > span:first-child {
+
+        display: none !important;
+        width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /* REMOVE ANY OLD TEXT SPAN */
+    .sidebar .sidebar-bottom .logout > span:last-child,
+    .sidebar:hover .sidebar-bottom .logout > span:last-child,
+    .sidebar.mobile-expanded .sidebar-bottom .logout > span:last-child {
+
+        display: none !important;
+    }
+
+
+    /* CREATE CLEAN LOGOUT TEXT */
+    .sidebar .sidebar-bottom .logout::after,
+    .sidebar:hover .sidebar-bottom .logout::after,
+    .sidebar.mobile-expanded .sidebar-bottom .logout::after {
+
+        content: "Logout" !important;
+
+        display: block !important;
+
+        color: #263238 !important;
+
+        font-family: inherit !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+
+        line-height: 1 !important;
+    }
+
+
+    /* =====================================================
+       SETTINGS — MAKE TOP NAV CLICKABLE
+       ===================================================== */
+
+    .sidebar .navigation,
+    .sidebar:hover .navigation,
+    .sidebar.mobile-expanded .navigation {
+
+        pointer-events: auto !important;
+        z-index: 1200 !important;
+    }
+
+
+    .sidebar .navigation .nav-item,
+    .sidebar:hover .navigation .nav-item,
+    .sidebar.mobile-expanded .navigation .nav-item {
+
+        pointer-events: auto !important;
+        cursor: pointer !important;
+    }
+
+
+    /* Specifically restore Settings */
+    .sidebar .navigation .nav-item:last-child,
+    .sidebar:hover .navigation .nav-item:last-child,
+    .sidebar.mobile-expanded .navigation .nav-item:last-child {
+
+        display: flex !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+    }
+
+
+    /* =====================================================
+       KEEP CONTENT BELOW TOP NAV
+       ===================================================== */
+
+    .dashboard,
+    .patients-page,
+    .patient-history-page,
+    .reports-page-content,
+    .screening-result-page,
+    .patient-profile-page,
+    .add-patient-page,
+    .settings-page {
+
+        padding-top: 86px !important;
+    }
+
+}
