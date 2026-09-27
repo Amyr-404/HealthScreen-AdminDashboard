@@ -7906,3 +7906,290 @@ td {
     }
 
 }
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       MOBILE BOTTOM CONTROLS — FINAL
+       ===================================================== */
+
+    /* -----------------------------------------------------
+       SYSTEM ONLINE — BOTTOM LEFT
+       ----------------------------------------------------- */
+
+    .sidebar .system-status,
+    .sidebar:hover .system-status,
+    .sidebar.mobile-expanded .system-status {
+
+        position: fixed !important;
+
+        left: 10px !important;
+        right: auto !important;
+        bottom: 10px !important;
+
+        width: auto !important;
+        min-width: 165px !important;
+        height: 52px !important;
+
+        margin: 0 !important;
+        padding: 0 14px !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        background: white !important;
+
+        border-radius: 12px !important;
+
+        box-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.12);
+
+        z-index: 1100;
+    }
+
+
+    /* Green status dot */
+    .sidebar .system-status .status-dot,
+    .sidebar:hover .system-status .status-dot,
+    .sidebar.mobile-expanded .system-status .status-dot {
+
+        width: 10px !important;
+        height: 10px !important;
+
+        flex-shrink: 0;
+
+        margin: 0 10px 0 0 !important;
+    }
+
+
+    /* System Online text */
+    .sidebar .system-status > div,
+    .sidebar:hover .system-status > div,
+    .sidebar.mobile-expanded .system-status > div {
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        justify-content: center !important;
+
+        align-items: flex-start !important;
+
+        gap: 2px;
+    }
+
+
+    .sidebar .system-status strong,
+    .sidebar:hover .system-status strong,
+    .sidebar.mobile-expanded .system-status strong {
+
+        display: block !important;
+
+        font-size: 11px !important;
+
+        line-height: 1.2 !important;
+
+        white-space: nowrap;
+    }
+
+
+    .sidebar .system-status small,
+    .sidebar:hover .system-status small,
+    .sidebar.mobile-expanded .system-status small {
+
+        display: block !important;
+
+        font-size: 9px !important;
+
+        line-height: 1.2 !important;
+
+        white-space: nowrap;
+    }
+
+
+    /* -----------------------------------------------------
+       ADMIN + LOGOUT — BOTTOM RIGHT
+       ----------------------------------------------------- */
+
+    .sidebar .sidebar-bottom,
+    .sidebar:hover .sidebar-bottom,
+    .sidebar.mobile-expanded .sidebar-bottom {
+
+        position: fixed !important;
+
+        left: auto !important;
+        right: 10px !important;
+        bottom: 10px !important;
+
+        width: auto !important;
+        height: 52px !important;
+
+        margin: 0 !important;
+        padding: 0 8px !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        gap: 8px !important;
+
+        background: white !important;
+
+        border-radius: 12px !important;
+
+        box-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.12);
+
+        z-index: 1100;
+    }
+
+
+    /* -----------------------------------------------------
+       ADMIN PROFILE
+       ----------------------------------------------------- */
+
+    .sidebar .admin-profile,
+    .sidebar:hover .admin-profile,
+    .sidebar.mobile-expanded .admin-profile {
+
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    .sidebar .profile-avatar,
+    .sidebar:hover .profile-avatar,
+    .sidebar.mobile-expanded .profile-avatar {
+
+        width: 34px !important;
+        height: 34px !important;
+
+        flex-shrink: 0;
+    }
+
+
+    .sidebar .profile-info,
+    .sidebar:hover .profile-info,
+    .sidebar.mobile-expanded .profile-info {
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        justify-content: center !important;
+
+        align-items: flex-start !important;
+
+        margin-left: 7px !important;
+
+        gap: 2px;
+    }
+
+
+    .sidebar .profile-info strong,
+    .sidebar:hover .profile-info strong,
+    .sidebar.mobile-expanded .profile-info strong {
+
+        display: block !important;
+
+        font-size: 10px !important;
+
+        line-height: 1.2 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    .sidebar .profile-info span,
+    .sidebar:hover .profile-info span,
+    .sidebar.mobile-expanded .profile-info span {
+
+        display: block !important;
+
+        font-size: 8px !important;
+
+        line-height: 1.2 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* -----------------------------------------------------
+       LOGOUT — EXPANDED
+       ----------------------------------------------------- */
+
+    .sidebar .logout,
+    .sidebar:hover .logout,
+    .sidebar.mobile-expanded .logout {
+
+        width: auto !important;
+        min-width: 70px !important;
+
+        height: 34px !important;
+
+        margin: 0 !important;
+        padding: 0 10px !important;
+
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 5px !important;
+
+        border-radius: 8px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    .sidebar .logout span:first-child,
+    .sidebar:hover .logout span:first-child,
+    .sidebar.mobile-expanded .logout span:first-child {
+
+        display: inline !important;
+
+        font-size: 17px !important;
+        line-height: 1;
+    }
+
+
+    .sidebar .logout span:last-child,
+    .sidebar:hover .logout span:last-child,
+    .sidebar.mobile-expanded .logout span:last-child {
+
+        display: inline !important;
+
+        font-size: 10px !important;
+
+        line-height: 1;
+    }
+
+
+    /* -----------------------------------------------------
+       REMOVE SETTINGS FROM BOTTOM
+       ----------------------------------------------------- */
+
+    .sidebar .sidebar-bottom::before,
+    .sidebar:hover .sidebar-bottom::before,
+    .sidebar.mobile-expanded .sidebar-bottom::before {
+
+        display: none !important;
+        content: none !important;
+    }
+
+}
