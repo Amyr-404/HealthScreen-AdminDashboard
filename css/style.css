@@ -6944,3 +6944,319 @@ td {
 .sidebar:hover .profile-info {
     display: flex;
 }
+
+/* =========================================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        min-width: 0;
+    }
+
+    /* ---------- SIDEBAR ---------- */
+
+    .sidebar {
+        width: 68px;
+        overflow: hidden;
+    }
+
+    .sidebar:hover {
+        width: 68px;
+    }
+
+    .sidebar-logo-full,
+    .sidebar .profile-info,
+    .sidebar .logout span:last-child {
+        display: none !important;
+    }
+
+    .sidebar-logo-icon {
+        display: block !important;
+        width: 40px;
+        height: 40px;
+    }
+
+    .sidebar .nav-item {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .sidebar .nav-item span:not(.nav-icon) {
+        display: none;
+    }
+
+    .sidebar .nav-icon-image {
+        width: 32px;
+        height: 32px;
+    }
+
+    .sidebar .admin-profile {
+        justify-content: center;
+    }
+
+    .sidebar .logout {
+        width: 48px;
+        height: 40px;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .sidebar .system-status {
+        justify-content: center;
+        padding: 10px;
+        margin: 8px;
+    }
+
+    .sidebar .system-status > div {
+        display: none;
+    }
+
+    /* ---------- PAGE SPACING ---------- */
+
+    .dashboard,
+    .patients-page,
+    .patient-history-page,
+    .reports-page-content,
+    .screening-result-page,
+    .patient-profile-page,
+    .add-patient-page,
+    .settings-page {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    /* ---------- DASHBOARD ---------- */
+
+    .dashboard .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .dashboard .content-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .dashboard .recent-panel {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    /* ---------- PATIENTS ---------- */
+
+    .patients-header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .patients-header .add-patient-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .patient-tools {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .patient-tools input,
+    .patient-tools select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .patient-panel .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .patient-panel table {
+        min-width: 700px;
+    }
+
+    /* ---------- SCREENING RECORDS ---------- */
+
+    .screening-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .screening-header > div:first-child {
+        max-width: 100%;
+    }
+
+    .screening-header .screening-actions {
+        width: 100%;
+    }
+
+    .screening-header .screening-actions button {
+        width: 100%;
+    }
+
+    .screening-table-container,
+    .screening-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .screening-table {
+        min-width: 800px;
+    }
+
+    /* ---------- PATIENT HISTORY ---------- */
+
+    .patient-history-page .history-filter-panel {
+        padding: 12px;
+    }
+
+    .patient-history-page .history-filter-panel form {
+        grid-template-columns: 1fr !important;
+    }
+
+    .patient-history-page .history-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .patient-history-page .history-table {
+        min-width: 700px;
+    }
+
+    /* ---------- PATIENT PROFILE ---------- */
+
+    .patient-profile-page {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow: visible !important;
+    }
+
+    .patient-profile-page .personal-info-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .patient-profile-page .measurement-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .patient-profile-page .history-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .patient-profile-page .history-table {
+        min-width: 700px;
+    }
+
+    /* ---------- SCREENING RESULT ---------- */
+
+    .result-info-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .measurement-result-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+    .result-actions button {
+        width: 100%;
+    }
+
+    /* ---------- ADD PATIENT ---------- */
+
+    .add-patient-page {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow: visible !important;
+    }
+
+    .add-patient-page .registration-panel {
+        padding: 16px;
+    }
+
+    .add-patient-page .form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .add-patient-page .form-actions {
+        flex-direction: column;
+    }
+
+    .add-patient-page .form-actions button {
+        width: 100%;
+    }
+
+    /* ---------- REPORTS ---------- */
+
+    .reports-page-content {
+        height: auto !important;
+        min-height: 100vh !important;
+    }
+
+    .reports-page-content .report-summary-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .reports-page-content .report-section-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .reports-page-content .recent-report-panel {
+        overflow-x: auto;
+    }
+
+    .reports-page-content .report-table {
+        min-width: 650px;
+    }
+
+    /* ---------- SETTINGS ---------- */
+
+    .settings-page {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow: visible !important;
+    }
+
+    .settings-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .settings-card.full-width .settings-option-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    .settings-form {
+        grid-template-columns: 1fr !important;
+    }
+
+    .settings-actions {
+        flex-direction: column;
+    }
+
+    .settings-actions button {
+        width: 100%;
+    }
+
+}
