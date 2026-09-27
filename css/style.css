@@ -7354,3 +7354,167 @@ td {
     }
 
 }
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       MOBILE BOTTOM CONTROLS
+       ===================================================== */
+
+    /* System Online - bottom left */
+    .sidebar .system-status,
+    .sidebar:hover .system-status,
+    .sidebar.mobile-expanded .system-status {
+        left: 10px !important;
+        right: auto !important;
+        bottom: 10px !important;
+    }
+
+
+    /* Admin / Logout / Settings container - bottom right */
+    .sidebar .sidebar-bottom,
+    .sidebar:hover .sidebar-bottom,
+    .sidebar.mobile-expanded .sidebar-bottom {
+
+        left: auto !important;
+        right: 10px !important;
+
+        bottom: 10px !important;
+
+        width: auto !important;
+        height: 42px !important;
+
+        padding: 0 6px !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        gap: 6px !important;
+    }
+
+
+    /* =====================================================
+       ADMIN PROFILE — LEFTMOST IN BOTTOM CONTROLS
+       ===================================================== */
+
+    .sidebar .admin-profile,
+    .sidebar:hover .admin-profile,
+    .sidebar.mobile-expanded .admin-profile {
+
+        order: 1 !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    .sidebar .profile-avatar,
+    .sidebar:hover .profile-avatar,
+    .sidebar.mobile-expanded .profile-avatar {
+
+        width: 30px !important;
+        height: 30px !important;
+
+        flex-shrink: 0;
+    }
+
+
+    .sidebar .profile-info,
+    .sidebar:hover .profile-info,
+    .sidebar.mobile-expanded .profile-info {
+
+        display: flex !important;
+
+        flex-direction: column;
+
+        margin-left: 6px !important;
+    }
+
+
+    .sidebar .profile-info strong {
+        font-size: 10px !important;
+        white-space: nowrap;
+    }
+
+
+    .sidebar .profile-info span {
+        font-size: 8px !important;
+        white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       LOGOUT — AFTER ADMIN
+       ===================================================== */
+
+    .sidebar .logout,
+    .sidebar:hover .logout,
+    .sidebar.mobile-expanded .logout {
+
+        order: 2 !important;
+
+        width: 32px !important;
+        height: 32px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        border-radius: 8px;
+    }
+
+
+    .sidebar .logout span:first-child {
+        font-size: 18px;
+    }
+
+
+    .sidebar .logout span:last-child {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       SETTINGS — RIGHTMOST
+       ===================================================== */
+
+    .sidebar .sidebar-bottom::before {
+
+        order: 3 !important;
+
+        content: "⚙";
+
+        width: 32px !important;
+        height: 32px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        margin: 0 !important;
+
+        font-size: 18px;
+
+        color: #1976d2;
+
+        background: #eef5ff;
+
+        border-radius: 8px;
+
+        flex-shrink: 0;
+    }
+
+}
