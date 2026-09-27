@@ -9035,3 +9035,19 @@ td {
     }
 
 }
+
+/* =========================================================
+   DASHBOARD — SCREENING RESULTS COLORS
+   ========================================================= */
+
+.dashboard .summary-normal {
+    color: #2e9d68 !important;
+}
+
+.dashboard .summary-caution {
+    color: #e6a21a !important;
+}
+
+.dashboard .summary-abnormal {
+    color: #d64545 !important;
+}
