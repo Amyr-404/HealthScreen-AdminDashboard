@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add Patient | HealthScreen</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+ <aside class="sidebar">
+
+    <div class="logo-area">
+
+        <img src="images/healthscreen-sidebar-logo-transparent.png"
+             alt="HealthScreen"
+             class="sidebar-logo-full">
+
+        <img src="images/healthscreen-sidebar-icon-transparent.png"
+             alt="HealthScreen"
+             class="sidebar-logo-icon">
+
+    </div>
+
+    <nav class="navigation">
+
+        <a href="dashboard.html" class="nav-item">
+            <img src="images/dashboard-sidebar-icon.png"
+                 alt="Dashboard"
+                 class="nav-icon-image">
+            <span>Dashboard</span>
+        </a>
+
+        <a href="patients.html" class="nav-item active">
+            <img src="images/patients-sidebar-icon.png"
+                 alt="Patients"
+                 class="nav-icon-image">
+            <span>Patients</span>
+        </a>
+
+        <a href="screening-records.html" class="nav-item">
+            <img src="images/screening-records-sidebar-icon.png"
+                 alt="Screening Records"
+                 class="nav-icon-image">
+            <span>Screening Records</span>
+        </a>
+
+        <a href="patient-history.html" class="nav-item">
+            <img src="images/patient-history-sidebar-icon.png"
+                 alt="Patient History"
+                 class="nav-icon-image">
+            <span>Patient History</span>
+        </a>
+
+        <a href="reports.html" class="nav-item">
+            <img src="images/reports-sidebar-icon.png"
+                 alt="Reports"
+                 class="nav-icon-image">
+            <span>Reports</span>
+        </a>
+
+        <a href="settings.html" class="nav-item">
+            <img src="images/settings-sidebar-icon.png"
+                 alt="Settings"
+                 class="nav-icon-image">
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+    <div class="system-status">
+        <span class="status-dot"></span>
+
+        <div>
+            <strong>System Online</strong>
+            <small>All services operational</small>
+        </div>
+    </div>
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-profile">
+
+            <div class="profile-avatar" id="sidebarProfileAvatar">
+                A
+            </div>
+
+            <div class="profile-info">
+                <strong id="sidebarProfileName">Administrator</strong>
+                <span>System Admin</span>
+            </div>
+
+        </div>
+
+        <a href="index.html" class="logout">
+            <span>⇥</span>
+            Logout
+        </a>
+
+    </div>
+
+</aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+
+
+        <!-- PAGE -->
+
+        <section class="add-patient-page">
+
+
+            <a
+                href="patients.html"
+                class="back-button"
+            >
+                ← Back to Patients
+            </a>
+
+
+            <!-- FORM -->
+
+            <div class="profile-panel registration-panel">
+
+                <div class="profile-panel-header">
+
+                </div>
+
+
+                <form id="patientForm">
+
+
+                    <!-- PERSONAL INFORMATION -->
+
+                    <div class="form-section-title">
+                        Personal Information
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="firstName">
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                placeholder="Enter first name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="middleName">
+                                Middle Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="middleName"
+                                placeholder="Enter middle name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lastName">
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                placeholder="Enter last name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="suffix">
+                                Suffix
+                            </label>
+
+                            <select id="suffix">
+
+                                <option value="">
+                                    None
+                                </option>
+
+                                <option value="Jr.">
+                                    Jr.
+                                </option>
+
+                                <option value="Sr.">
+                                    Sr.
+                                </option>
+
+                                <option value="II">
+                                    II
+                                </option>
+
+                                <option value="III">
+                                    III
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="birthDate">
+                                Date of Birth
+                            </label>
+
+                            <input
+                                type="date"
+                                id="birthDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="sex">
+                                Sex
+                            </label>
+
+                            <select
+                                id="sex"
+                                required
+                            >
+
+                                <option value="">
+                                    Select sex
+                                </option>
+
+                                <option value="Male">
+                                    Male
+                                </option>
+
+                                <option value="Female">
+                                    Female
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="contact">
+                                Contact Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="contact"
+                                placeholder="09XX-XXX-XXXX"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="form-section-title">
+                        Address Information
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group form-wide">
+
+                            <label for="address">
+                                Complete Address
+                            </label>
+
+                            <textarea
+                                id="address"
+                                rows="3"
+                                placeholder="Enter complete address"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- EMERGENCY CONTACT -->
+
+                    <div class="form-section-title">
+                        Emergency Contact
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="emergencyName">
+                                Contact Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="emergencyName"
+                                placeholder="Emergency contact name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="emergencyRelation">
+                                Relationship
+                            </label>
+
+                            <input
+                                type="text"
+                                id="emergencyRelation"
+                                placeholder="e.g. Mother, Father, Spouse"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="emergencyNumber">
+                                Contact Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="emergencyNumber"
+                                placeholder="09XX-XXX-XXXX"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOTICE -->
+
+                    <div class="registration-notice">
+
+                        <strong>
+                            Patient Registration
+                        </strong>
+
+                        <p>
+                            Patient information will be used for health
+                            screening and monitoring purposes.
+                        </p>
+
+                    </div>
+
+
+                    <!-- BUTTONS -->
+
+                    <div class="form-actions">
+
+                        <a
+                            href="patients.html"
+                            class="cancel-button"
+                        >
+                            Cancel
+                        </a>
+
+
+                        <button
+                            type="submit"
+                            class="save-patient-button"
+                        >
+                            Save Patient
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+<!-- =====================================================
+     ADD PATIENT MODAL
+===================================================== -->
+
+<div
+    id="addPatientModal"
+    class="add-patient-modal"
+>
+
+    <div class="save-modal">
+
+        <div class="save-modal-icon">
+            ✓
+        </div>
+
+        <h2 id="addPatientModalTitle">
+            Save Patient?
+        </h2>
+
+        <p id="addPatientModalMessage">
+            Are you sure you want to save this patient?
+        </p>
+
+        <div class="save-modal-actions">
+
+            <button
+                type="button"
+                id="cancelAddPatient"
+                class="modal-cancel-button"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="confirmAddPatient"
+                class="modal-confirm-button"
+            >
+                Save Patient
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const patientForm =
+    document.getElementById(
+        "patientForm"
+    );
+
+
+const addPatientModal =
+    document.getElementById(
+        "addPatientModal"
+    );
+
+
+const cancelAddPatient =
+    document.getElementById(
+        "cancelAddPatient"
+    );
+
+
+const confirmAddPatient =
+    document.getElementById(
+        "confirmAddPatient"
+    );
+
+
+const addPatientModalTitle =
+    document.getElementById(
+        "addPatientModalTitle"
+    );
+
+
+const addPatientModalMessage =
+    document.getElementById(
+        "addPatientModalMessage"
+    );
+
+
+/* =====================================================
+   PENDING PATIENT
+===================================================== */
+
+let pendingPatient = null;
+
+
+/* =====================================================
+   FORM SUBMIT
+===================================================== */
+
+patientForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        /* =========================================
+           GET FORM VALUES
+        ========================================= */
+
+        const firstName =
+            document.getElementById(
+                "firstName"
+            ).value.trim();
+
+
+        const middleName =
+            document.getElementById(
+                "middleName"
+            ).value.trim();
+
+
+        const lastName =
+            document.getElementById(
+                "lastName"
+            ).value.trim();
+
+
+        const suffix =
+            document.getElementById(
+                "suffix"
+            ).value;
+
+
+        const birthDate =
+            document.getElementById(
+                "birthDate"
+            ).value;
+
+
+        const sex =
+            document.getElementById(
+                "sex"
+            ).value;
+
+
+        const contact =
+            document.getElementById(
+                "contact"
+            ).value.trim();
+
+
+        const address =
+            document.getElementById(
+                "address"
+            ).value.trim();
+
+
+        const emergencyName =
+            document.getElementById(
+                "emergencyName"
+            ).value.trim();
+
+
+        const emergencyRelation =
+            document.getElementById(
+                "emergencyRelation"
+            ).value.trim();
+
+
+        const emergencyNumber =
+            document.getElementById(
+                "emergencyNumber"
+            ).value.trim();
+
+
+        /* =========================================
+           CREATE FULL NAME
+        ========================================= */
+
+        const fullName =
+            firstName +
+            " " +
+            (middleName
+                ? middleName + " "
+                : "") +
+            lastName +
+            (suffix
+                ? " " + suffix
+                : "");
+
+
+        /* =========================================
+           STORE PENDING DATA
+        ========================================= */
+
+        pendingPatient = {
+
+            firstName:
+                firstName,
+
+            middleName:
+                middleName,
+
+            lastName:
+                lastName,
+
+            suffix:
+                suffix,
+
+            fullName:
+                fullName,
+
+            birthDate:
+                birthDate,
+
+            sex:
+                sex,
+
+            contact:
+                contact,
+
+            address:
+                address,
+
+            emergencyName:
+                emergencyName,
+
+            emergencyRelation:
+                emergencyRelation,
+
+            emergencyNumber:
+                emergencyNumber
+
+        };
+
+
+        /* =========================================
+           OPEN CONFIRMATION POPUP
+        ========================================= */
+
+        addPatientModalTitle.textContent =
+            "Save Patient?";
+
+
+        addPatientModalMessage.textContent =
+            "Are you sure you want to register " +
+            fullName +
+            " as a new patient?";
+
+
+        confirmAddPatient.style.display =
+            "inline-block";
+
+
+        cancelAddPatient.textContent =
+            "Cancel";
+
+
+        addPatientModal.classList.add(
+            "show"
+        );
+
+    }
+);
+
+
+/* =====================================================
+   CANCEL
+===================================================== */
+
+cancelAddPatient.addEventListener(
+    "click",
+    function() {
+
+        addPatientModal.classList.remove(
+            "show"
+        );
+
+        pendingPatient = null;
+
+    }
+);
+
+
+/* =====================================================
+   CONFIRM SAVE
+===================================================== */
+
+confirmAddPatient.addEventListener(
+    "click",
+    function() {
+
+        if (!pendingPatient) {
+            return;
+        }
+
+
+        /* =========================================
+           GET EXISTING PATIENTS
+        ========================================= */
+
+        let registeredPatients =
+            JSON.parse(
+                localStorage.getItem(
+                    "registeredPatients"
+                )
+            ) || [];
+
+
+        /* =========================================
+           GENERATE PATIENT ID
+        ========================================= */
+
+        let highestId =
+            124;
+
+
+        registeredPatients.forEach(
+            function(patient) {
+
+                const number =
+                    parseInt(
+                        patient.id.replace(
+                            "PT-",
+                            ""
+                        )
+                    );
+
+
+                if (
+                    !isNaN(number) &&
+                    number > highestId
+                ) {
+
+                    highestId =
+                        number;
+
+                }
+
+            }
+        );
+
+
+        const newPatientId =
+            "PT-" +
+            String(
+                highestId + 1
+            ).padStart(
+                6,
+                "0"
+            );
+
+
+        /* =========================================
+           CREATE PATIENT OBJECT
+        ========================================= */
+
+        const patient = {
+
+            id:
+                newPatientId,
+
+            initials:
+                (
+                    pendingPatient.firstName
+                        .charAt(0) +
+
+                    pendingPatient.lastName
+                        .charAt(0)
+                ).toUpperCase(),
+
+            name:
+                pendingPatient.fullName,
+
+            firstName:
+                pendingPatient.firstName,
+
+            middleName:
+                pendingPatient.middleName,
+
+            lastName:
+                pendingPatient.lastName,
+
+            suffix:
+                pendingPatient.suffix,
+
+            birthDate:
+                pendingPatient.birthDate,
+
+            sex:
+                pendingPatient.sex,
+
+            contact:
+                pendingPatient.contact,
+
+            address:
+                pendingPatient.address,
+
+            emergencyName:
+                pendingPatient.emergencyName,
+
+            emergencyRelation:
+                pendingPatient.emergencyRelation,
+
+            emergencyNumber:
+                pendingPatient.emergencyNumber,
+
+            location:
+                pendingPatient.address,
+
+            status:
+                "Not Yet Screened",
+
+            createdAt:
+                new Date().toISOString()
+
+        };
+
+
+        /* =========================================
+           SAVE PATIENT
+        ========================================= */
+
+        registeredPatients.push(
+            patient
+        );
+
+
+        localStorage.setItem(
+            "registeredPatients",
+            JSON.stringify(
+                registeredPatients
+            )
+        );
+
+
+        /* =========================================
+           SHOW SUCCESS
+        ========================================= */
+
+        addPatientModalTitle.textContent =
+            "Patient Registered";
+
+
+        addPatientModalMessage.textContent =
+            pendingPatient.fullName +
+            " has been registered successfully.\n\n" +
+            "Patient ID: " +
+            newPatientId;
+
+
+        confirmAddPatient.style.display =
+            "none";
+
+
+        cancelAddPatient.textContent =
+            "Close";
+
+
+        pendingPatient = null;
+
+    }
+);
+
+
+/* =====================================================
+   CLOSE SUCCESS POPUP
+===================================================== */
+
+cancelAddPatient.addEventListener(
+    "click",
+    function() {
+
+        if (
+            cancelAddPatient.textContent ===
+            "Close"
+        ) {
+
+            window.location.href =
+                "patients.html";
+
+            return;
+
+        }
+
+
+        addPatientModal.classList.remove(
+            "show"
+        );
+
+        pendingPatient = null;
+
+    }
+);
+function loadAddPatientProfile() {
+
+    const profile = JSON.parse(
+        localStorage.getItem('healthScreenProfile')
+    );
+
+    if (!profile) return;
+
+    const initials = profile.name
+        .trim()
+        .split(/\s+/)
+        .map(function(word) {
+            return word.charAt(0);
+        })
+        .join('')
+        .substring(0, 2)
+        .toUpperCase();
+
+    const sidebarName =
+        document.getElementById('sidebarProfileName');
+
+    if (sidebarName) {
+        sidebarName.textContent = profile.name;
+    }
+
+    const sidebarAvatar =
+        document.getElementById('sidebarProfileAvatar');
+
+    if (sidebarAvatar) {
+        sidebarAvatar.textContent = initials;
+    }
+}
+
+document.addEventListener(
+    'DOMContentLoaded',
+    loadAddPatientProfile
+);
+</script>
+
+
+</body>
+
+</html>

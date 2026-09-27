@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Screening System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+ <aside class="sidebar">
+
+<div class="logo-area">
+
+    <img
+        src="images/healthscreen-sidebar-logo-transparent.png"
+        alt="HealthScreen Admin Portal"
+        class="sidebar-logo-full"
+    >
+
+    <img
+        src="images/healthscreen-sidebar-icon-transparent.png"
+        alt="HealthScreen"
+        class="sidebar-logo-icon"
+    >
+
+</div>
+
+   <nav class="navigation">
+
+    <a href="dashboard.html" class="nav-item active">
+        <img
+            src="images/dashboard-sidebar-icon.png"
+            alt="Dashboard"
+            class="nav-icon-image"
+        >
+        <span>Dashboard</span>
+    </a>
+
+    <a href="patients.html" class="nav-item">
+        <img
+            src="images/patients-sidebar-icon.png"
+            alt="Patients"
+            class="nav-icon-image"
+        >
+        <span>Patients</span>
+    </a>
+
+    <a href="screening-records.html" class="nav-item">
+        <img
+            src="images/screening-records-sidebar-icon.png"
+            alt="Screening Records"
+            class="nav-icon-image"
+        >
+        <span>Screening Records</span>
+    </a>
+
+    <a href="patient-history.html" class="nav-item">
+        <img
+            src="images/patient-history-sidebar-icon.png"
+            alt="Patient History"
+            class="nav-icon-image"
+        >
+        <span>Patient History</span>
+    </a>
+
+    <a href="reports.html" class="nav-item">
+        <img
+            src="images/reports-sidebar-icon.png"
+            alt="Reports"
+            class="nav-icon-image"
+        >
+        <span>Reports</span>
+    </a>
+
+    <a href="settings.html" class="nav-item">
+        <img
+            src="images/settings-sidebar-icon.png"
+            alt="Settings"
+            class="nav-icon-image"
+        >
+        <span>Settings</span>
+    </a>
+
+</nav>
+
+    <div class="system-status">
+        <span class="status-dot"></span>
+        <div>
+            <strong>System Online</strong>
+            <small>All services operational</small>
+        </div>
+    </div>
+
+    <div class="sidebar-bottom">
+
+ <div class="admin-profile">
+
+        <div class="profile-avatar" id="sidebarProfileAvatar">
+            A
+        </div>
+
+        <div class="profile-info">
+            <strong id="sidebarProfileName">Administrator</strong>
+            <span>System Admin</span>
+        </div>
+
+    </div>
+
+    <a
+        href="index.html"
+        class="logout"
+    >
+        <span>⇥</span>
+        Logout
+    </a>
+
+</div>
+
+</aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+
+           
+
+
+            <!-- DASHBOARD -->
+            <section class="dashboard">
+
+                <!-- WELCOME -->
+                <div class="welcome-card">
+
+                    <div>
+                        <span class="welcome-label">WELCOME BACK</span>
+
+                        <h2>Good morning, Administrator</h2>
+
+                        <p>
+                            Here's what's happening with the health
+                            screening system today.
+                        </p>
+                    </div>
+
+                    <div class="welcome-icon">
+                        ♥
+                    </div>
+
+                </div>
+
+
+                <!-- STATISTICS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+                            ♙
+                        </div>
+
+                        <div>
+                            <span>Total Patients</span>
+                            <h2 id="totalPatients">1,248</h2>
+                            <small class="positive">+12 this month</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+                            ▤
+                        </div>
+
+                        <div>
+                            <span>Total Screenings</span>
+                            <h2 id="totalScreenings">1,105</h2>
+                            <small class="positive">+8.4% this month</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            ✓
+                        </div>
+
+                        <div>
+                            <span>Normal Results</span>
+                            <h2 id="normalResults">892</h2>
+                            <small id="normalResultsPercent">80.7% of screenings</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+                            !
+                        </div>
+
+                        <div>
+                            <span>Needs Attention</span>
+                            <h2 id="needsAttention">213</h2>
+                            <small id="needsAttentionPercent">19.3% of screenings</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTENT GRID -->
+                <div class="content-grid">
+
+                    <!-- SCREENING OVERVIEW -->
+                    <div class="panel chart-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Screening Overview</h3>
+                                <p>Health screening activity</p>
+                            </div>
+
+                            <select id="chartRange">
+                                <option value="week">This Week</option>
+                                <option value="month">This Month</option>
+                                <option value="year">This Year</option>
+                            </select>
+
+                        </div>
+
+                        <div class="chart">
+
+                            <div class="chart-y">
+                                <span>40</span>
+                                <span>30</span>
+                                <span>20</span>
+                                <span>10</span>
+                                <span>0</span>
+                            </div>
+
+                            <div class="chart-area">
+
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+
+                                <div class="bars">
+
+                                    <div class="bar-group">
+                                        <div class="bar" id="barMon" style="height: 55%;"></div>
+                                        <span id="label1">Mon</span>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar" id="barTue" style="height: 72%;"></div>
+                                        <span id="label2">Tue</span>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar" id="barWed" style="height: 48%;"></div>
+                                        <span id="label3">Wed</span>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar" id="barThu" style="height: 82%;"></div>
+                                        <span id="label4">Thu</span>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar" id="barFri" style="height: 66%;"></div>
+                                        <span id="label5">Fri</span>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar" id="barSat" style="height: 38%;"></div>
+                                        <span id="label6">Sat</span>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar" id="barSun" style="height: 20%;"></div>
+                                        <span id="label7">Sun</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RESULT SUMMARY -->
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Screening Results</h3>
+                                <p>Current distribution</p>
+                            </div>
+
+                        </div>
+
+                        <div class="result-summary">
+
+                            <div class="result-item">
+                                <div class="result-circle normal" id="normalPercentage">
+                                    81%
+                                </div>
+
+                                <div>
+                                    <strong>Normal</strong>
+                                    <span id="normalPatients">892 screenings</span>
+                                </div>
+                            </div>
+
+                            <div class="result-item">
+                                <div class="result-circle caution" id="cautionPercentage">
+                                    13%
+                                </div>
+
+                                <div>
+                                    <strong>Caution</strong>
+                                    <span id="cautionPatients">143 patients</span>
+                                </div>
+                            </div>
+
+
+                            <div class="result-item">
+                            <div class="result-circle abnormal" id="abnormalPercentage">
+                                6%
+                            </div>
+
+                            <div>
+                                <strong>Abnormal</strong>
+                                <span id="abnormalPatients">70 screenings</span>
+                            </div>
+                        </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT SCREENINGS -->
+                <div class="panel recent-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Recent Screenings</h3>
+                            <p>Latest health screening records</p>
+                        </div>
+
+                        <a href="screening-records.html" class="view-button">
+                        View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Patient</th>
+                                    <th>Patient ID</th>
+                                    <th>Date</th>
+                                    <th>BMI</th>
+                                    <th>Blood Pressure</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="recentScreeningsTable">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                <div class="dashboard-pagination" id="dashboardPagination"></div>
+                
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================================
+       REGISTERED PATIENTS
+       ========================================= */
+
+    const registeredPatients =
+        JSON.parse(localStorage.getItem("registeredPatients")) || [];
+
+
+    /* =========================================
+       SCREENING RECORDS
+       ========================================= */
+
+    const storedScreeningRecords =
+        JSON.parse(localStorage.getItem("screeningRecords")) || [];
+
+
+    /* =========================================
+       BASELINE DEMO DATA
+       ========================================= */
+
+    const basePatients = 1248;
+    const baseScreenings = 1105;
+    const baseNormal = 892;
+    const baseNeedsAttention = 213;
+
+
+    /* =========================================
+       TOTAL PATIENTS
+       ========================================= */
+
+    const totalPatients =
+        basePatients + registeredPatients.length;
+
+
+    /* =========================================
+       TOTAL SCREENINGS
+       ========================================= */
+
+    const totalScreenings =
+        baseScreenings + storedScreeningRecords.length;
+
+
+    /* =========================================
+       RESULT COUNTS
+       ========================================= */
+
+let normalResults = baseNormal;
+let cautionResults = 143;
+let abnormalResults = 70;
+
+
+storedScreeningRecords.forEach(function (record) {
+
+    if (record.status === "Normal") {
+        normalResults++;
+    }
+
+    if (record.status === "Caution") {
+        cautionResults++;
+    }
+
+    if (record.status === "Abnormal") {
+        abnormalResults++;
+    }
+
+});
+
+
+const needsAttention =
+    cautionResults + abnormalResults;
+const normalPercentage =
+    totalScreenings > 0
+        ? ((normalResults / totalScreenings) * 100).toFixed(1)
+        : "0.0";
+
+const needsAttentionPercentage =
+    totalScreenings > 0
+        ? ((needsAttention / totalScreenings) * 100).toFixed(1)
+        : "0.0";
+
+    /* =========================================
+       UPDATE DASHBOARD
+       ========================================= */
+
+    document.getElementById("totalPatients").textContent =
+        totalPatients.toLocaleString();
+
+    document.getElementById("totalScreenings").textContent =
+        totalScreenings.toLocaleString();
+
+    document.getElementById("normalResults").textContent =
+        normalResults.toLocaleString();
+
+    document.getElementById("needsAttention").textContent =
+        needsAttention.toLocaleString();
+
+        document.getElementById("normalResultsPercent").textContent =
+    normalPercentage + "% of screenings";
+
+        document.getElementById("needsAttentionPercent").textContent =
+    needsAttentionPercentage + "% of screenings";
+
+        document.getElementById("normalPercentage").textContent =
+    normalPercentage + "%";
+
+        document.getElementById("normalPatients").textContent =
+    normalResults.toLocaleString() + " screenings";
+
+        document.getElementById("cautionPercentage").textContent =
+            totalScreenings > 0
+                ? ((cautionResults / totalScreenings) * 100).toFixed(1) + "%"
+                : "0.0%";
+
+        document.getElementById("cautionPatients").textContent =
+            cautionResults.toLocaleString() + " screenings";
+
+
+document.getElementById("abnormalPercentage").textContent =
+    totalScreenings > 0
+        ? ((abnormalResults / totalScreenings) * 100).toFixed(1) + "%"
+        : "0.0%";
+
+document.getElementById("abnormalPatients").textContent =
+    abnormalResults.toLocaleString() + " screenings";
+});
+</script>
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        /* =========================================
+           DEMO RECENT SCREENINGS
+        ========================================= */
+
+        const demoRecentScreenings = [
+
+            {
+                initials: "JD",
+                name: "Juan Dela Cruz",
+                id: "PT-000124",
+                date: "Sept 23, 2026",
+                time: "09:42 AM",
+                bmi: "23.8",
+                bp: "120/80 mmHg",
+                status: "Normal"
+            },
+
+            {
+                initials: "MS",
+                name: "Maria Santos",
+                id: "PT-000123",
+                date: "Sept 23, 2026",
+                time: "09:15 AM",
+                bmi: "27.4",
+                bp: "135/85 mmHg",
+                status: "Caution"
+            },
+
+            {
+                initials: "PR",
+                name: "Pedro Reyes",
+                id: "PT-000122",
+                date: "Sept 22, 2026",
+                time: "02:36 PM",
+                bmi: "22.1",
+                bp: "118/76 mmHg",
+                status: "Normal"
+            },
+
+            {
+                initials: "AC",
+                name: "Ana Cruz",
+                id: "PT-000121",
+                date: "Sept 22, 2026",
+                time: "10:21 AM",
+                bmi: "30.2",
+                bp: "145/92 mmHg",
+                status: "Abnormal"
+            },
+
+            {
+                initials: "CM",
+                name: "Carlos Mendoza",
+                id: "PT-000120",
+                date: "Sept 21, 2026",
+                time: "11:08 AM",
+                bmi: "23.4",
+                bp: "116/78 mmHg",
+                status: "Normal"
+            },
+
+            {
+                initials: "SG",
+                name: "Sofia Garcia",
+                id: "PT-000119",
+                date: "Sept 20, 2026",
+                time: "03:14 PM",
+                bmi: "21.8",
+                bp: "114/75 mmHg",
+                status: "Normal"
+            }
+
+        ];
+
+
+        /* =========================================
+           SAVED SCREENING RECORDS
+        ========================================= */
+
+        const savedScreeningRecords =
+            JSON.parse(
+                localStorage.getItem(
+                    "screeningRecords"
+                )
+            ) || [];
+
+
+        const savedRecentScreenings =
+            savedScreeningRecords.map(
+                function (record) {
+
+                    return {
+
+                        initials:
+                            record.initials || "",
+
+                        name:
+                            record.name || "Unknown",
+
+                        id:
+                            record.patientId || "—",
+
+                        date:
+                            record.date || "—",
+
+                        time:
+                            record.time || "—",
+
+                        bmi:
+                            record.bmi || "—",
+
+                        bp:
+                            record.bloodPressure || "—",
+
+                        status:
+                            record.status || "Normal"
+
+                    };
+
+                }
+            );
+
+
+        /* =========================================
+           NORMALIZE DATE
+        ========================================= */
+
+        function normalizeDate(date) {
+
+            return (date || "")
+                .replace(
+                    /^Sept /,
+                    "September "
+                )
+                .trim();
+
+        }
+
+
+        /* =========================================
+           CONVERT TO DATE/TIME
+        ========================================= */
+
+        function getRecordDateTime(record) {
+
+            const normalizedDate =
+                normalizeDate(
+                    record.date
+                );
+
+            const parsed =
+                new Date(
+                    normalizedDate +
+                    " " +
+                    record.time
+                );
+
+            if (
+                isNaN(
+                    parsed.getTime()
+                )
+            ) {
+
+                return 0;
+
+            }
+
+            return parsed.getTime();
+
+        }
+
+
+        /* =========================================
+           CHECK DUPLICATE
+        ========================================= */
+
+        function isDuplicate(
+            record,
+            existingRecords
+        ) {
+
+            return existingRecords.some(
+                function (existing) {
+
+                    return (
+                        existing.id ===
+                            record.id
+
+                        &&
+
+                        normalizeDate(
+                            existing.date
+                        ) ===
+                            normalizeDate(
+                                record.date
+                            )
+
+                        &&
+
+                        existing.time ===
+                            record.time
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =========================================
+           COMBINE SAVED + DEMO RECORDS
+        ========================================= */
+
+        const recentScreenings = [
+
+            ...savedRecentScreenings
+
+        ];
+
+
+        demoRecentScreenings.forEach(
+            function (demoRecord) {
+
+                if (
+                    !isDuplicate(
+                        demoRecord,
+                        savedRecentScreenings
+                    )
+                ) {
+
+                    recentScreenings.push(
+                        demoRecord
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           SORT NEWEST FIRST
+        ========================================= */
+
+        recentScreenings.sort(
+            function (a, b) {
+
+                return (
+                    getRecordDateTime(b)
+                    -
+                    getRecordDateTime(a)
+                );
+
+            }
+        );
+
+
+/* =========================================
+   DASHBOARD PAGINATION
+========================================= */
+
+let currentDashboardPage = 1;
+const dashboardRecordsPerPage = 3;
+
+const totalDashboardPages =
+    Math.ceil(
+        recentScreenings.length /
+        dashboardRecordsPerPage
+    );
+
+const dashboardStartIndex =
+    (currentDashboardPage - 1) *
+    dashboardRecordsPerPage;
+
+const latestScreenings =
+    recentScreenings.slice(
+        dashboardStartIndex,
+        dashboardStartIndex +
+        dashboardRecordsPerPage
+    );
+
+
+        /* =========================================
+           RENDER TABLE
+        ========================================= */
+
+        const table =
+            document.getElementById(
+                "recentScreeningsTable"
+            );
+
+
+        if (!table) {
+            return;
+        }
+
+
+        if (
+            latestScreenings.length === 0
+        ) {
+
+            table.innerHTML = `
+                <tr>
+                    <td
+                        colspan="6"
+                        style="
+                            text-align:center;
+                            padding:30px;
+                            color:var(--muted);
+                        "
+                    >
+                        No screening records found.
+                    </td>
+                </tr>
+            `;
+
+            return;
+
+        }
+
+
+        table.innerHTML =
+            latestScreenings.map(
+                function (record) {
+
+                    let badgeClass =
+                        "normal-badge";
+
+
+                    if (
+                        record.status ===
+                        "Caution"
+                    ) {
+
+                        badgeClass =
+                            "caution-badge";
+
+                    }
+
+
+                    if (
+                        record.status ===
+                        "Abnormal"
+                    ) {
+
+                        badgeClass =
+                            "abnormal-badge";
+
+                    }
+
+
+                    return `
+                        <tr>
+
+                            <td>
+
+                                <div class="patient">
+
+                                    <div class="patient-avatar">
+                                        ${record.initials}
+                                    </div>
+
+                                    <strong>
+
+                                        <a
+                                            href="patient-profile.html?id=${record.id}"
+                                            class="recent-patient-link"
+                                        >
+                                            ${record.name}
+                                        </a>
+
+                                    </strong>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                ${record.id}
+                            </td>
+
+                            <td>
+                                ${record.date}
+                            </td>
+
+                            <td>
+                                ${record.bmi}
+                            </td>
+
+                            <td>
+                                ${record.bp}
+                            </td>
+
+                            <td>
+
+                                <span
+                                    class="badge ${badgeClass}"
+                                >
+                                    ${record.status}
+                                </span>
+
+                            </td>
+
+                        </tr>
+                    `;
+
+                }
+                    ).join("");
+
+
+        /* =========================================
+           DASHBOARD PAGINATION
+        ========================================= */
+
+        function renderDashboardPagination() {
+
+            const pagination =
+                document.getElementById(
+                    "dashboardPagination"
+                );
+
+            if (!pagination) {
+                return;
+            }
+
+            if (totalDashboardPages <= 1) {
+                pagination.innerHTML = "";
+                return;
+            }
+
+            let html = "";
+
+            html += `
+                <button
+                    onclick="changeDashboardPage(${currentDashboardPage - 1})"
+                    ${currentDashboardPage === 1 ? "disabled" : ""}
+                >
+                    ‹
+                </button>
+            `;
+
+            for (
+                let page = 1;
+                page <= totalDashboardPages;
+                page++
+            ) {
+
+                html += `
+                    <button
+                        class="${page === currentDashboardPage ? "page-active" : ""}"
+                        onclick="changeDashboardPage(${page})"
+                    >
+                        ${page}
+                    </button>
+                `;
+
+            }
+
+            html += `
+                <button
+                    onclick="changeDashboardPage(${currentDashboardPage + 1})"
+                    ${currentDashboardPage === totalDashboardPages ? "disabled" : ""}
+                >
+                    ›
+                </button>
+            `;
+
+            pagination.innerHTML = html;
+        }
+
+
+        window.changeDashboardPage = function(page) {
+
+            currentDashboardPage = page;
+
+            const startIndex =
+                (currentDashboardPage - 1) *
+                dashboardRecordsPerPage;
+
+            const pageRecords =
+                recentScreenings.slice(
+                    startIndex,
+                    startIndex +
+                    dashboardRecordsPerPage
+                );
+
+            table.innerHTML =
+                pageRecords.map(
+                    function (record) {
+
+                        let badgeClass =
+                            "normal-badge";
+
+                        if (
+                            record.status ===
+                            "Caution"
+                        ) {
+                            badgeClass =
+                                "caution-badge";
+                        }
+
+                        if (
+                            record.status ===
+                            "Abnormal"
+                        ) {
+                            badgeClass =
+                                "abnormal-badge";
+                        }
+
+                        return `
+                            <tr>
+
+                                <td>
+
+                                    <div class="patient">
+
+                                        <div class="patient-avatar">
+                                            ${record.initials}
+                                        </div>
+
+                                        <strong>
+                                            <a
+                                                href="patient-profile.html?id=${record.id}"
+                                                class="recent-patient-link"
+                                            >
+                                                ${record.name}
+                                            </a>
+                                        </strong>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    ${record.id}
+                                </td>
+
+                                <td>
+                                    ${record.date}
+                                </td>
+
+                                <td>
+                                    ${record.bmi}
+                                </td>
+
+                                <td>
+                                    ${record.bp}
+                                </td>
+
+                                <td>
+
+                                    <span
+                                        class="badge ${badgeClass}"
+                                    >
+                                        ${record.status}
+                                    </span>
+
+                                </td>
+
+                            </tr>
+                        `;
+
+                    }
+                ).join("");
+
+    renderDashboardPagination();
+};
+
+
+renderDashboardPagination();
+
+    }
+
+);
+
+</script>
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const chartRange =
+            document.getElementById(
+                "chartRange"
+            );
+
+
+        const barIds = [
+            "barMon",
+            "barTue",
+            "barWed",
+            "barThu",
+            "barFri",
+            "barSat",
+            "barSun"
+        ];
+
+
+        const labelIds = [
+            "label1",
+            "label2",
+            "label3",
+            "label4",
+            "label5",
+            "label6",
+            "label7"
+        ];
+
+
+        /* =========================================
+           DEMO SCREENING RECORDS
+        ========================================= */
+
+        const demoRecords = [
+
+            {
+                date: "September 23, 2026",
+                time: "09:42 AM"
+            },
+
+            {
+                date: "September 23, 2026",
+                time: "09:15 AM"
+            },
+
+            {
+                date: "September 22, 2026",
+                time: "02:36 PM"
+            },
+
+            {
+                date: "September 22, 2026",
+                time: "10:21 AM"
+            },
+
+            {
+                date: "September 21, 2026",
+                time: "11:08 AM"
+            },
+
+            {
+                date: "September 20, 2026",
+                time: "03:14 PM"
+            }
+
+        ];
+
+
+        /* =========================================
+           LOAD SAVED RECORDS
+        ========================================= */
+
+        const savedRecords =
+            JSON.parse(
+                localStorage.getItem(
+                    "screeningRecords"
+                )
+            ) || [];
+
+
+        const convertedSavedRecords =
+            savedRecords.map(
+                function (record) {
+
+                    return {
+                        date:
+                            record.date || "",
+
+                        time:
+                            record.time || "",
+
+                        patientId:
+                            record.patientId || ""
+                    };
+
+                }
+            );
+
+
+        /* =========================================
+           NORMALIZE DATE
+        ========================================= */
+
+        function normalizeDate(
+            date
+        ) {
+
+            return (
+                date || ""
+            )
+            .replace(
+                /^Sept /,
+                "September "
+            )
+            .trim();
+
+        }
+
+
+        /* =========================================
+           GET DATE OBJECT
+        ========================================= */
+
+        function getDate(
+            record
+        ) {
+
+            const parsed =
+                new Date(
+                    normalizeDate(
+                        record.date
+                    ) +
+                    " " +
+                    record.time
+                );
+
+            return parsed;
+
+        }
+
+
+        /* =========================================
+           REMOVE DUPLICATES
+        ========================================= */
+
+        const allRecords = [
+            ...convertedSavedRecords
+        ];
+
+
+        demoRecords.forEach(
+            function (demoRecord) {
+
+                const duplicate =
+                    allRecords.some(
+                        function (savedRecord) {
+
+                            return (
+                                normalizeDate(
+                                    savedRecord.date
+                                ) ===
+                                normalizeDate(
+                                    demoRecord.date
+                                )
+
+                                &&
+
+                                savedRecord.time ===
+                                demoRecord.time
+                            );
+
+                        }
+                    );
+
+
+                if (!duplicate) {
+
+                    allRecords.push(
+                        demoRecord
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           UPDATE CHART
+        ========================================= */
+
+        function updateChart(
+            labels,
+            values
+        ) {
+
+            const maxValue =
+                Math.max(
+                    ...values,
+                    1
+                );
+
+
+            for (
+                let i = 0;
+                i < 7;
+                i++
+            ) {
+
+                const bar =
+                    document.getElementById(
+                        barIds[i]
+                    );
+
+                const label =
+                    document.getElementById(
+                        labelIds[i]
+                    );
+
+
+                if (
+                    !bar ||
+                    !label
+                ) {
+                    continue;
+                }
+
+
+                label.textContent =
+                    labels[i] || "";
+
+
+                const barGroup =
+                    bar.parentElement;
+
+
+                barGroup.style.display =
+                    labels[i]
+                        ? "flex"
+                        : "none";
+
+
+                if (
+                    labels[i]
+                ) {
+
+                    const percentage =
+                        values[i] === 0
+                            ? 0
+                            : (
+                                values[i] /
+                                maxValue
+                              ) * 100;
+
+
+                    bar.style.height =
+                        percentage + "%";
+
+                }
+                else {
+
+                    bar.style.height =
+                        "0%";
+
+                }
+
+            }
+
+        }
+
+
+        /* =========================================
+           THIS WEEK
+        ========================================= */
+
+        function showWeek() {
+
+            const today =
+                new Date();
+
+
+            today.setHours(
+                0,
+                0,
+                0,
+                0
+            );
+
+
+            const day =
+                today.getDay();
+
+
+            const difference =
+                day === 0
+                    ? -6
+                    : 1 - day;
+
+
+            const monday =
+                new Date(
+                    today
+                );
+
+
+            monday.setDate(
+                today.getDate() +
+                difference
+            );
+
+
+            const labels = [
+                "Mon",
+                "Tue",
+                "Wed",
+                "Thu",
+                "Fri",
+                "Sat",
+                "Sun"
+            ];
+
+
+            const values = [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ];
+
+
+            allRecords.forEach(
+                function (record) {
+
+                    const recordDate =
+                        getDate(
+                            record
+                        );
+
+
+                    if (
+                        isNaN(
+                            recordDate.getTime()
+                        )
+                    ) {
+                        return;
+                    }
+
+
+                    recordDate.setHours(
+                        0,
+                        0,
+                        0,
+                        0
+                    );
+
+
+                    const difference =
+                        Math.floor(
+                            (
+                                recordDate -
+                                monday
+                            ) /
+                            (
+                                1000 *
+                                60 *
+                                60 *
+                                24
+                            )
+                        );
+
+
+                    if (
+                        difference >= 0 &&
+                        difference < 7
+                    ) {
+
+                        values[
+                            difference
+                        ]++;
+
+                    }
+
+                }
+            );
+
+
+            updateChart(
+                labels,
+                values
+            );
+
+        }
+
+
+        /* =========================================
+           THIS MONTH
+        ========================================= */
+
+        function showMonth() {
+
+            const today =
+                new Date();
+
+
+            const year =
+                today.getFullYear();
+
+
+            const month =
+                today.getMonth();
+
+
+            const labels = [
+                "W1",
+                "W2",
+                "W3",
+                "W4",
+                "W5"
+            ];
+
+
+            const values = [
+                0,
+                0,
+                0,
+                0,
+                0
+            ];
+
+
+            allRecords.forEach(
+                function (record) {
+
+                    const recordDate =
+                        getDate(
+                            record
+                        );
+
+
+                    if (
+                        isNaN(
+                            recordDate.getTime()
+                        )
+                    ) {
+                        return;
+                    }
+
+
+                    if (
+                        recordDate.getFullYear()
+                            !== year
+                        ||
+                        recordDate.getMonth()
+                            !== month
+                    ) {
+                        return;
+                    }
+
+
+                    const date =
+                        recordDate.getDate();
+
+
+                    let weekIndex =
+                        Math.floor(
+                            (
+                                date - 1
+                            ) / 7
+                        );
+
+
+                    if (
+                        weekIndex > 4
+                    ) {
+                        weekIndex = 4;
+                    }
+
+
+                    values[
+                        weekIndex
+                    ]++;
+
+                }
+            );
+
+
+            updateChart(
+                labels,
+                values
+            );
+
+        }
+
+
+        /* =========================================
+           THIS YEAR
+        ========================================= */
+
+        function showYear() {
+
+            const today =
+                new Date();
+
+
+            const currentYear =
+                today.getFullYear();
+
+
+            const labels = [];
+
+
+            const values = [];
+
+
+            for (
+                let i = 6;
+                i >= 0;
+                i--
+            ) {
+
+                const monthDate =
+                    new Date(
+                        currentYear,
+                        today.getMonth() - i,
+                        1
+                    );
+
+
+                labels.push(
+                    monthDate.toLocaleString(
+                        "en-US",
+                        {
+                            month:
+                                "short"
+                        }
+                    )
+                );
+
+
+                values.push(0);
+
+            }
+
+
+            allRecords.forEach(
+                function (record) {
+
+                    const recordDate =
+                        getDate(
+                            record
+                        );
+
+
+                    if (
+                        isNaN(
+                            recordDate.getTime()
+                        )
+                    ) {
+                        return;
+                    }
+
+
+                    if (
+                        recordDate.getFullYear()
+                            !== currentYear
+                    ) {
+                        return;
+                    }
+
+
+                    const monthDifference =
+                        (
+                            today.getFullYear()
+                            -
+                            recordDate.getFullYear()
+                        ) * 12
+                        +
+                        (
+                            today.getMonth()
+                            -
+                            recordDate.getMonth()
+                        );
+
+
+                    if (
+                        monthDifference >= 0 &&
+                        monthDifference <= 6
+                    ) {
+
+                        const index =
+                            6 -
+                            monthDifference;
+
+
+                        values[
+                            index
+                        ]++;
+
+                    }
+
+                }
+            );
+
+
+            updateChart(
+                labels,
+                values
+            );
+
+        }
+
+
+        /* =========================================
+           RANGE SELECTOR
+        ========================================= */
+
+        function updateSelectedRange() {
+
+            if (
+                chartRange.value ===
+                "week"
+            ) {
+
+                showWeek();
+
+            }
+
+            else if (
+                chartRange.value ===
+                "month"
+            ) {
+
+                showMonth();
+
+            }
+
+            else if (
+                chartRange.value ===
+                "year"
+            ) {
+
+                showYear();
+
+            }
+
+        }
+
+
+        if (chartRange) {
+
+            chartRange.addEventListener(
+                "change",
+                updateSelectedRange
+            );
+
+
+            updateSelectedRange();
+
+        }
+
+    }
+
+);
+
+</script>
+
+<script>
+
+/* =========================================================
+   LOAD SETTINGS
+========================================================= */
+
+function getHealthScreenSettings() {
+
+    const savedSettings =
+        localStorage.getItem('healthScreenSettings');
+
+    if (!savedSettings) {
+        return {
+            kioskName: 'Health Screening Monitoring System',
+            syncInterval: '30',
+            autoRefresh: true,
+            autoSync: true
+        };
+    }
+
+    return JSON.parse(savedSettings);
+}
+
+
+/* =========================================================
+   APPLY KIOSK NAME
+========================================================= */
+
+function applyKioskName() {
+
+    const settings =
+        getHealthScreenSettings();
+
+    document.title =
+        settings.kioskName + ' | Dashboard';
+}
+
+
+/* =========================================================
+   AUTO SYNC
+========================================================= */
+
+function performAutoSync() {
+
+    const settings =
+        getHealthScreenSettings();
+
+    if (!settings.autoSync) {
+        return;
+    }
+
+    /*
+       Frontend prototype:
+       record the latest local synchronization time.
+       Firebase synchronization will be connected later.
+    */
+
+    localStorage.setItem(
+        'healthScreenLastSync',
+        new Date().toLocaleString()
+    );
+}
+
+
+/* =========================================================
+   AUTO REFRESH
+========================================================= */
+
+function startAutoRefresh() {
+
+    const settings =
+        getHealthScreenSettings();
+
+    if (!settings.autoRefresh) {
+        return;
+    }
+
+    const interval =
+        parseInt(settings.syncInterval, 10) * 1000;
+
+    if (!interval || interval <= 0) {
+        return;
+    }
+
+    setTimeout(function () {
+
+        performAutoSync();
+
+        location.reload();
+
+    }, interval);
+}
+
+
+/* =========================================================
+   INITIALIZE DASHBOARD SETTINGS
+========================================================= */
+
+document.addEventListener(
+    'DOMContentLoaded',
+    function () {
+
+        applyKioskName();
+
+        performAutoSync();
+
+        startAutoRefresh();
+
+    }
+);
+
+</script>
+<!-- DASHBOARD NOTIFICATION TOAST -->
+
+<div id="dashboardToast" class="dashboard-toast">
+
+    <div class="dashboard-toast-icon" id="dashboardToastIcon">
+        !
+    </div>
+
+    <div class="dashboard-toast-content">
+        <strong id="dashboardToastTitle">
+            Notification
+        </strong>
+
+        <span id="dashboardToastMessage">
+            New notification
+        </span>
+    </div>
+
+    <button
+        type="button"
+        class="dashboard-toast-close"
+        onclick="hideDashboardToast()"
+    >
+        ×
+    </button>
+
+</div>
+
+<script>
+
+/* =========================================================
+   DASHBOARD NOTIFICATIONS
+========================================================= */
+
+function getDashboardSettings() {
+
+    return JSON.parse(
+        localStorage.getItem('healthScreenSettings')
+    ) || {
+        notifyNewScreening: true,
+        notifyAbnormalResult: true,
+        notifySystemOffline: true
+    };
+}
+
+
+/* SHOW TOAST */
+
+function showDashboardToast(title, message, type) {
+
+    const toast =
+        document.getElementById('dashboardToast');
+
+    const icon =
+        document.getElementById('dashboardToastIcon');
+
+    const titleElement =
+        document.getElementById('dashboardToastTitle');
+
+    const messageElement =
+        document.getElementById('dashboardToastMessage');
+
+    if (!toast || !icon || !titleElement || !messageElement) {
+        return;
+    }
+
+    titleElement.textContent = title;
+    messageElement.textContent = message;
+
+    icon.textContent =
+        type === 'abnormal' ? '!' : '✓';
+
+    toast.classList.add('show');
+
+    clearTimeout(window.dashboardToastTimer);
+
+    window.dashboardToastTimer =
+        setTimeout(function () {
+            hideDashboardToast();
+        }, 6000);
+}
+
+
+/* HIDE TOAST */
+
+function hideDashboardToast() {
+
+    const toast =
+        document.getElementById('dashboardToast');
+
+    if (toast) {
+        toast.classList.remove('show');
+    }
+}
+
+
+/* CHECK SCREENING NOTIFICATIONS */
+
+function checkScreeningNotifications() {
+
+    const settings =
+        getDashboardSettings();
+
+    const records =
+        JSON.parse(
+            localStorage.getItem('screeningRecords')
+        ) || [];
+
+    if (records.length === 0) {
+        return;
+    }
+
+    const latestRecord =
+        records[records.length - 1];
+
+    const recordKey =
+        latestRecord.patientId +
+        '|' +
+        latestRecord.date +
+        '|' +
+        latestRecord.time;
+
+
+    const lastNotified =
+        localStorage.getItem(
+            'healthScreenLastNotifiedScreening'
+        );
+
+
+    /* Don't notify repeatedly for the same record */
+
+    if (lastNotified === recordKey) {
+        return;
+    }
+
+
+    /* Save as seen */
+
+    localStorage.setItem(
+        'healthScreenLastNotifiedScreening',
+        recordKey
+    );
+
+
+    /* ABNORMAL ALERT */
+
+    if (
+        latestRecord.status === 'Abnormal' &&
+        settings.notifyAbnormalResult
+    ) {
+
+        showDashboardToast(
+            'Abnormal Result Alert',
+            'A new screening record has been marked as abnormal.',
+            'abnormal'
+        );
+
+        return;
+    }
+
+
+    /* NEW SCREENING ALERT */
+
+    if (settings.notifyNewScreening) {
+
+        showDashboardToast(
+            'New Screening Record',
+            'A new health screening record has been added.',
+            'normal'
+        );
+
+    }
+
+}
+
+/* =========================================================
+   SYSTEM OFFLINE ALERT
+========================================================= */
+
+function checkSystemOffline() {
+
+    const settings = getDashboardSettings();
+
+    if (
+        !settings.notifySystemOffline ||
+        navigator.onLine
+    ) {
+        return;
+    }
+
+    showDashboardToast(
+        'System Offline',
+        'The health screening system has lost its network connection.',
+        'abnormal'
+    );
+}
+
+
+/* NETWORK CONNECTION LOST */
+
+window.addEventListener('offline', function () {
+
+    const settings = getDashboardSettings();
+
+    if (!settings.notifySystemOffline) {
+        return;
+    }
+
+    showDashboardToast(
+        'System Offline',
+        'The health screening system has lost its network connection.',
+        'abnormal'
+    );
+
+});
+
+
+/* NETWORK CONNECTION RESTORED */
+
+window.addEventListener('online', function () {
+
+    const settings = getDashboardSettings();
+
+    if (!settings.notifySystemOffline) {
+        return;
+    }
+
+    showDashboardToast(
+        'System Online',
+        'The network connection has been restored.',
+        'normal'
+    );
+
+});
+
+document.addEventListener(
+    'DOMContentLoaded',
+    function () {
+
+        checkScreeningNotifications();
+        checkSystemOffline();
+
+    }
+);
+
+</script>
+<script>
+
+function loadDashboardProfile() {
+
+    const profile = JSON.parse(
+        localStorage.getItem('healthScreenProfile')
+    );
+
+    if (!profile) {
+        return;
+    }
+
+    const initials = profile.name
+        .trim()
+        .split(/\s+/)
+        .map(function (word) {
+            return word.charAt(0);
+        })
+        .join('')
+        .substring(0, 2)
+        .toUpperCase();
+
+
+    const sidebarName =
+        document.getElementById('sidebarProfileName');
+
+    if (sidebarName) {
+        sidebarName.textContent = profile.name;
+    }
+
+
+    const sidebarAvatar =
+        document.getElementById('sidebarProfileAvatar');
+
+    if (sidebarAvatar) {
+        sidebarAvatar.textContent = initials;
+    }
+
+
+
+
+}
+
+
+document.addEventListener(
+    'DOMContentLoaded',
+    loadDashboardProfile
+);
+
+</script>
+</body>
+</html>

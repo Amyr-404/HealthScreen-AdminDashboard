@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Screening Records | HealthScreen</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+ <aside class="sidebar">
+
+    <div class="logo-area">
+        <img
+            src="images/healthscreen-sidebar-logo-transparent.png"
+            alt="HealthScreen"
+            class="sidebar-logo-full"
+        >
+
+        <img
+            src="images/healthscreen-sidebar-icon-transparent.png"
+            alt="HealthScreen"
+            class="sidebar-logo-icon"
+        >
+    </div>
+
+    <nav class="navigation">
+
+        <a href="dashboard.html" class="nav-item">
+            <img
+                src="images/dashboard-sidebar-icon.png"
+                alt="Dashboard"
+                class="nav-icon-image"
+            >
+            <span>Dashboard</span>
+        </a>
+
+        <a href="patients.html" class="nav-item">
+            <img
+                src="images/patients-sidebar-icon.png"
+                alt="Patients"
+                class="nav-icon-image"
+            >
+            <span>Patients</span>
+        </a>
+
+        <a href="screening-records.html" class="nav-item active">
+            <img
+                src="images/screening-records-sidebar-icon.png"
+                alt="Screening Records"
+                class="nav-icon-image"
+            >
+            <span>Screening Records</span>
+        </a>
+
+        <a href="patient-history.html" class="nav-item">
+            <img
+                src="images/patient-history-sidebar-icon.png"
+                alt="Patient History"
+                class="nav-icon-image"
+            >
+            <span>Patient History</span>
+        </a>
+
+        <a href="reports.html" class="nav-item">
+            <img
+                src="images/reports-sidebar-icon.png"
+                alt="Reports"
+                class="nav-icon-image"
+            >
+            <span>Reports</span>
+        </a>
+
+        <a href="settings.html" class="nav-item">
+            <img
+                src="images/settings-sidebar-icon.png"
+                alt="Settings"
+                class="nav-icon-image"
+            >
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+    <div class="system-status">
+        <span class="status-dot"></span>
+        <div>
+            <strong>System Online</strong>
+            <small>All services operational</small>
+        </div>
+    </div>
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-profile">
+            <div class="profile-avatar" id="sidebarProfileAvatar">A</div>
+
+<div class="profile-info">
+    <strong id="sidebarProfileName">Administrator</strong>
+    <span>System Admin</span>
+</div>
+        </div>
+
+        <a href="index.html" class="logout">
+            <span>⇥</span>
+            Logout
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+ 
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <section class="screening-page">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="screening-header">
+
+
+                <div>
+
+                    <h2>Screening Records</h2>
+
+                    <p>
+                        Health screening results collected from the kiosk
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+            ================================================== -->
+
+            <div class="screening-summary">
+
+
+                <div class="screening-summary-card">
+
+                    <span>
+                        Total Screenings
+                    </span>
+
+                    <strong id="totalScreenings">
+                        6
+                    </strong>
+
+                    <small>
+                        Recorded screenings
+                    </small>
+
+                </div>
+
+
+                <div class="screening-summary-card">
+
+                    <span>
+                        Normal
+                    </span>
+
+                    <strong
+                        class="summary-normal"
+                        id="normalCount"
+                    >
+                        4
+                    </strong>
+
+                    <small>
+                        Normal results
+                    </small>
+
+                </div>
+
+
+                <div class="screening-summary-card">
+
+                    <span>
+                        Caution
+                    </span>
+
+                    <strong
+                        class="summary-caution"
+                        id="cautionCount"
+                    >
+                        1
+                    </strong>
+
+                    <small>
+                        Needs attention
+                    </small>
+
+                </div>
+
+
+                <div class="screening-summary-card">
+
+                    <span>
+                        Abnormal
+                    </span>
+
+                    <strong
+                        class="summary-abnormal"
+                        id="abnormalCount"
+                    >
+                        1
+                    </strong>
+
+                    <small>
+                        Requires review
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SEARCH / FILTER
+            ================================================== -->
+
+            <div class="screening-tools">
+
+
+                <div class="screening-search">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input
+                        type="text"
+                        id="screeningSearch"
+                        placeholder="Search patient name or ID..."
+                    >
+
+                </div>
+
+
+                <select id="screeningStatus">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="normal">
+                        Normal
+                    </option>
+
+                    <option value="caution">
+                        Caution
+                    </option>
+
+                    <option value="abnormal">
+                        Abnormal
+                    </option>
+
+                </select>
+
+
+                <select id="screeningDate">
+
+                    <option value="all">
+                        All Dates
+                    </option>
+
+                    <option value="today">
+                        Today
+                    </option>
+
+                    <option value="recent">
+                        Last 7 Days
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RECORD COUNT
+            ================================================== -->
+
+            <div class="screening-count">
+
+                <strong id="recordCount">
+                    6 Records
+                </strong>
+
+                <span>
+                    screening sessions
+                </span>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SCREENING TABLE
+            ================================================== -->
+
+            <div class="panel screening-panel">
+
+
+                <div class="screening-table-container">
+
+
+                    <table id="screeningTable">
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Date & Time
+                                </th>
+
+                                <th>
+                                    Patient
+                                </th>
+
+                                <th>
+                                    Patient ID
+                                </th>
+
+                                <th>
+                                    BMI
+                                </th>
+
+                                <th>
+                                    Temperature
+                                </th>
+
+                                <th>
+                                    SpO₂
+                                </th>
+
+                                <th>
+                                    Heart Rate
+                                </th>
+
+                                <th>
+                                    Blood Pressure
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="screeningRecordsTable">
+                        
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="screening-pagination" id="screeningPagination"></div>
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const searchInput =
+    document.getElementById("screeningSearch");
+
+const statusFilter =
+    document.getElementById("screeningStatus");
+
+const dateFilter =
+    document.getElementById("screeningDate");
+
+const recordCount =
+    document.getElementById("recordCount");
+
+const totalScreenings =
+    document.getElementById("totalScreenings");
+
+const normalCount =
+    document.getElementById("normalCount");
+
+const cautionCount =
+    document.getElementById("cautionCount");
+
+const abnormalCount =
+    document.getElementById("abnormalCount");
+/* =====================================================
+   DEMO SCREENING RECORDS
+===================================================== */
+
+const demoRecords = [
+
+    {
+        name: "Juan Dela Cruz",
+        patientId: "PT-000124",
+        date: "Sept 23, 2026",
+        time: "09:42 AM",
+        bmi: "24.2",
+        temperature: "36.5 °C",
+        spo2: "98 %",
+        heartRate: "78 BPM",
+        bloodPressure: "120/80",
+        status: "Normal",
+        dateFilter: "today"
+    },
+
+    {
+        name: "Maria Santos",
+        patientId: "PT-000123",
+        date: "Sept 23, 2026",
+        time: "09:15 AM",
+        bmi: "27.4",
+        temperature: "36.7 °C",
+        spo2: "97 %",
+        heartRate: "84 BPM",
+        bloodPressure: "135/85",
+        status: "Caution",
+        dateFilter: "today"
+    },
+
+    {
+        name: "Pedro Reyes",
+        patientId: "PT-000122",
+        date: "Sept 22, 2026",
+        time: "02:36 PM",
+        bmi: "22.1",
+        temperature: "36.4 °C",
+        spo2: "98 %",
+        heartRate: "72 BPM",
+        bloodPressure: "118/76",
+        status: "Normal",
+        dateFilter: "recent"
+    },
+
+    {
+        name: "Ana Cruz",
+        patientId: "PT-000121",
+        date: "Sept 22, 2026",
+        time: "10:21 AM",
+        bmi: "30.2",
+        temperature: "37.1 °C",
+        spo2: "95 %",
+        heartRate: "96 BPM",
+        bloodPressure: "145/92",
+        status: "Abnormal",
+        dateFilter: "recent"
+    },
+
+    {
+        name: "Carlos Mendoza",
+        patientId: "PT-000120",
+        date: "Sept 21, 2026",
+        time: "11:08 AM",
+        bmi: "23.4",
+        temperature: "36.3 °C",
+        spo2: "99 %",
+        heartRate: "74 BPM",
+        bloodPressure: "116/78",
+        status: "Normal",
+        dateFilter: "recent"
+    },
+
+    {
+        name: "Sofia Garcia",
+        patientId: "PT-000119",
+        date: "Sept 20, 2026",
+        time: "03:14 PM",
+        bmi: "21.8",
+        temperature: "36.5 °C",
+        spo2: "98 %",
+        heartRate: "76 BPM",
+        bloodPressure: "114/75",
+        status: "Normal",
+        dateFilter: "recent"
+    }
+
+];
+
+
+/* =====================================================
+   LOAD SAVED SCREENING RECORDS
+===================================================== */
+
+const savedRecords =
+    JSON.parse(
+        localStorage.getItem("screeningRecords")
+    ) || [];
+
+
+/* =====================================================
+   CONVERT SAVED RECORDS
+===================================================== */
+
+const convertedSavedRecords =
+    savedRecords.map(function (record) {
+
+        return {
+
+            name:
+                record.name || "Unknown",
+
+            patientId:
+                record.patientId || "",
+
+            date:
+                record.date || "",
+
+            time:
+                record.time || "",
+
+            bmi:
+                record.bmi || "—",
+
+            temperature:
+                record.temperature || "—",
+
+            spo2:
+                record.spo2 || "—",
+
+            heartRate:
+                record.heartRate || "—",
+
+            bloodPressure:
+                record.bloodPressure || "—",
+
+            status:
+                record.status || "Normal",
+
+            dateFilter:
+                record.date ===
+                    "September 23, 2026" ||
+                record.date ===
+                    "Sept 23, 2026"
+                    ? "today"
+                    : "recent"
+
+        };
+
+    });
+
+
+/* =====================================================
+   DATE HELPERS
+===================================================== */
+
+function normalizeDate(dateString) {
+
+    return dateString
+        .replace(/^Sept /, "September ");
+
+}
+
+
+/* =====================================================
+   COMBINE DEMO + SAVED RECORDS
+===================================================== */
+
+const allRecords = [
+    ...convertedSavedRecords
+];
+
+
+demoRecords.forEach(function (demoRecord) {
+
+    const duplicate =
+        convertedSavedRecords.some(function (savedRecord) {
+
+            return (
+                savedRecord.patientId ===
+                    demoRecord.patientId
+
+                &&
+
+                normalizeDate(savedRecord.date) ===
+                    normalizeDate(demoRecord.date)
+
+                &&
+
+                savedRecord.time ===
+                    demoRecord.time
+            );
+
+        });
+
+
+    if (!duplicate) {
+
+        allRecords.push(demoRecord);
+
+    }
+
+});
+
+
+/* =====================================================
+   DETERMINE TODAY / LAST 7 DAYS
+===================================================== */
+
+const latestDate = allRecords.reduce(function (latest, record) {
+
+    const currentDate =
+        new Date(normalizeDate(record.date));
+
+    return currentDate > latest
+        ? currentDate
+        : latest;
+
+}, new Date(0));
+
+
+/* =====================================================
+   ASSIGN DATE FILTER
+===================================================== */
+
+allRecords.forEach(function (record) {
+
+    const recordDate =
+        new Date(normalizeDate(record.date));
+
+    const difference =
+        Math.floor(
+            (latestDate - recordDate) /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    if (difference === 0) {
+
+        record.dateFilter = "today";
+
+    }
+
+    else if (difference >= 0 && difference <= 7) {
+
+        record.dateFilter = "recent";
+
+    }
+
+    else {
+
+        record.dateFilter = "older";
+
+    }
+
+});
+
+/* =====================================================
+   UPDATE SUMMARY CARDS
+===================================================== */
+
+function updateSummaryCards() {
+
+    const total =
+        allRecords.length;
+
+    const normal =
+        allRecords.filter(function (record) {
+            return record.status === "Normal";
+        }).length;
+
+    const caution =
+        allRecords.filter(function (record) {
+            return record.status === "Caution";
+        }).length;
+
+    const abnormal =
+        allRecords.filter(function (record) {
+            return record.status === "Abnormal";
+        }).length;
+
+
+    totalScreenings.textContent =
+        total;
+
+    normalCount.textContent =
+        normal;
+
+    cautionCount.textContent =
+        caution;
+
+    abnormalCount.textContent =
+        abnormal;
+
+}
+/* =====================================================
+   RENDER TABLE
+===================================================== */
+let currentScreeningPage = 1;
+const screeningsPerPage = 7;
+function renderRecords(records) {
+
+    const table =
+        document.getElementById(
+            "screeningRecordsTable"
+        );
+
+    const pagination =
+        document.getElementById(
+            "screeningPagination"
+        );
+
+    if (!table) {
+        return;
+    }
+
+
+    if (records.length === 0) {
+
+        table.innerHTML = `
+            <tr>
+                <td
+                    colspan="10"
+                    style="
+                        text-align:center;
+                        padding:30px;
+                        color:var(--muted);
+                    "
+                >
+                    No screening records found.
+                </td>
+            </tr>
+        `;
+
+        recordCount.textContent =
+            "0 Records";
+
+        if (pagination) {
+            pagination.innerHTML = "";
+        }
+
+        return;
+    }
+
+
+    const totalPages =
+        Math.ceil(
+            records.length /
+            screeningsPerPage
+        );
+
+
+    if (currentScreeningPage > totalPages) {
+        currentScreeningPage = totalPages;
+    }
+
+
+    const startIndex =
+        (currentScreeningPage - 1) *
+        screeningsPerPage;
+
+    const endIndex =
+        startIndex +
+        screeningsPerPage;
+
+    const pageRecords =
+        records.slice(
+            startIndex,
+            endIndex
+        );
+
+
+    table.innerHTML =
+        pageRecords.map(function (record) {
+
+            let badgeClass =
+                "normal-badge";
+
+
+            if (record.status === "Caution") {
+                badgeClass =
+                    "caution-badge";
+            }
+
+
+            if (record.status === "Abnormal") {
+                badgeClass =
+                    "abnormal-badge";
+            }
+
+
+            return `
+                <tr
+                    data-name="${record.name.toLowerCase()}"
+                    data-id="${record.patientId.toLowerCase()}"
+                    data-status="${record.status.toLowerCase()}"
+                    data-date="${record.dateFilter}"
+                >
+
+                    <td>
+                        ${record.date}
+
+                        <small class="record-time">
+                            ${record.time}
+                        </small>
+                    </td>
+
+                    <td>
+                        ${record.name}
+                    </td>
+
+                    <td>
+                        ${record.patientId}
+                    </td>
+
+                    <td>
+                        ${record.bmi}
+                    </td>
+
+                    <td>
+                        ${record.temperature}
+                    </td>
+
+                    <td>
+                        ${record.spo2}
+                    </td>
+
+                    <td>
+                        ${record.heartRate}
+                    </td>
+
+                    <td>
+                        ${record.bloodPressure}
+                    </td>
+
+                    <td>
+                        <span class="badge ${badgeClass}">
+                            ${record.status}
+                        </span>
+                    </td>
+
+                    <td>
+                        <button
+                            class="view-record"
+                            onclick="viewRecord('${record.patientId}')"
+                        >
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+            `;
+
+        }).join("");
+
+
+    recordCount.textContent =
+        records.length + " Records";
+
+
+    renderScreeningPagination(
+        records,
+        totalPages
+    );
+}
+
+function renderScreeningPagination(
+    records,
+    totalPages
+) {
+
+    const pagination =
+        document.getElementById(
+            "screeningPagination"
+        );
+
+    if (!pagination) {
+        return;
+    }
+
+
+    if (totalPages <= 1) {
+        pagination.innerHTML = "";
+        return;
+    }
+
+
+    let html = "";
+
+
+    html += `
+        <button
+            onclick="changeScreeningPage(${currentScreeningPage - 1})"
+            ${currentScreeningPage === 1 ? "disabled" : ""}
+        >
+            ‹
+        </button>
+    `;
+
+
+    for (
+        let page = 1;
+        page <= totalPages;
+        page++
+    ) {
+
+        html += `
+            <button
+                class="${page === currentScreeningPage ? "page-active" : ""}"
+                onclick="changeScreeningPage(${page})"
+            >
+                ${page}
+            </button>
+        `;
+    }
+
+
+    html += `
+        <button
+            onclick="changeScreeningPage(${currentScreeningPage + 1})"
+            ${currentScreeningPage === totalPages ? "disabled" : ""}
+        >
+            ›
+        </button>
+    `;
+
+
+    pagination.innerHTML = html;
+}
+
+function changeScreeningPage(page) {
+
+    currentScreeningPage = page;
+
+    filterRecords(false);
+}
+/* =====================================================
+   FILTER RECORDS
+===================================================== */
+
+function filterRecords(resetPage = true) {
+
+    if (resetPage) {
+        currentScreeningPage = 1;
+    }
+
+    const search =
+        searchInput.value
+            .toLowerCase()
+            .trim();
+
+
+    const status =
+        statusFilter.value
+            .toLowerCase();
+
+
+    const date =
+        dateFilter.value
+            .toLowerCase();
+
+
+    const filteredRecords =
+        allRecords.filter(function (record) {
+
+            const name =
+                record.name
+                    .toLowerCase();
+
+
+            const id =
+                record.patientId
+                    .toLowerCase();
+
+
+            const rowStatus =
+                record.status
+                    .toLowerCase();
+
+
+            const rowDate =
+                record.dateFilter
+                    .toLowerCase();
+
+
+            const matchesSearch =
+                name.includes(search) ||
+                id.includes(search);
+
+
+            const matchesStatus =
+                status === "all" ||
+                rowStatus === status;
+
+
+            const matchesDate =
+                date === "all" ||
+
+                (
+                    date === "today" &&
+                    rowDate === "today"
+                ) ||
+
+                (
+                    date === "recent" &&
+                    (
+                        rowDate === "today" ||
+                        rowDate === "recent"
+                    )
+                );
+
+
+            return (
+                matchesSearch &&
+                matchesStatus &&
+                matchesDate
+            );
+
+        });
+
+
+    renderRecords(filteredRecords);
+
+}
+
+
+/* =====================================================
+   EVENTS
+===================================================== */
+
+searchInput.addEventListener(
+    "input",
+    filterRecords
+);
+
+
+statusFilter.addEventListener(
+    "change",
+    filterRecords
+);
+
+
+dateFilter.addEventListener(
+    "change",
+    filterRecords
+);
+
+
+/* =====================================================
+   VIEW RECORD
+===================================================== */
+
+function viewRecord(patientId) {
+
+    window.location.href =
+        "screening-result.html?id=" +
+        patientId;
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+updateSummaryCards();
+filterRecords();
+
+</script>
+
+<script>
+function loadScreeningRecordsProfile() {
+
+    const profile = JSON.parse(
+        localStorage.getItem('healthScreenProfile')
+    );
+
+    if (!profile) return;
+
+    const initials = profile.name
+        .trim()
+        .split(/\s+/)
+        .map(function(word) {
+            return word.charAt(0);
+        })
+        .join('')
+        .substring(0, 2)
+        .toUpperCase();
+
+    const sidebarName =
+        document.getElementById('sidebarProfileName');
+
+    if (sidebarName) {
+        sidebarName.textContent = profile.name;
+    }
+
+    const sidebarAvatar =
+        document.getElementById('sidebarProfileAvatar');
+
+    if (sidebarAvatar) {
+        sidebarAvatar.textContent = initials;
+    }
+}
+
+document.addEventListener(
+    'DOMContentLoaded',
+    loadScreeningRecordsProfile
+);
+</script>
+
+</body>
+
+</html>

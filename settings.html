@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Health Screening Admin</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo-area">
+            <img src="images/healthscreen-sidebar-logo-transparent.png"
+                 alt="HealthScreen"
+                 class="sidebar-logo-full">
+
+            <img src="images/healthscreen-sidebar-icon-transparent.png"
+                 alt="HealthScreen"
+                 class="sidebar-logo-icon">
+        </div>
+
+        <nav class="navigation">
+
+            <a href="dashboard.html" class="nav-item">
+                <img src="images/dashboard-sidebar-icon.png"
+                     alt="Dashboard"
+                     class="nav-icon-image">
+                <span>Dashboard</span>
+            </a>
+
+            <a href="patients.html" class="nav-item">
+                <img src="images/patients-sidebar-icon.png"
+                     alt="Patients"
+                     class="nav-icon-image">
+                <span>Patients</span>
+            </a>
+
+            <a href="screening-records.html" class="nav-item">
+                <img src="images/screening-records-sidebar-icon.png"
+                     alt="Screening Records"
+                     class="nav-icon-image">
+                <span>Screening Records</span>
+            </a>
+
+            <a href="patient-history.html" class="nav-item">
+                <img src="images/patient-history-sidebar-icon.png"
+                     alt="Patient History"
+                     class="nav-icon-image">
+                <span>Patient History</span>
+            </a>
+
+            <a href="reports.html" class="nav-item">
+                <img src="images/reports-sidebar-icon.png"
+                     alt="Reports"
+                     class="nav-icon-image">
+                <span>Reports</span>
+            </a>
+
+            <a href="settings.html" class="nav-item active">
+                <img src="images/settings-sidebar-icon.png"
+                     alt="Settings"
+                     class="nav-icon-image">
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            <div>
+                <strong>System Online</strong>
+                <small>All services operational</small>
+            </div>
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-profile">
+                <div class="profile-avatar" id="sidebarProfileAvatar">A</div>
+
+                <div class="profile-info">
+                    <strong id="sidebarProfileName">Administrator</strong>
+                    <span>System Admin</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="logout">
+                <span>⇥</span>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- CONTENT -->
+        <section class="settings-page">
+
+            <div class="settings-page-header">
+                <h2>Settings</h2>
+                <p>Configure the Health Screening Monitoring System</p>
+            </div>
+
+            <div class="settings-grid">
+
+                <!-- ADMINISTRATOR PROFILE -->
+                <div class="settings-card">
+
+                    <div class="settings-card-header">
+                       
+
+                        <div>
+                            <h3>Administrator Profile</h3>
+                            <p>Current administrator account</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-profile">
+
+                        <div class="settings-avatar" id="settingsProfileAvatar">A</div>
+
+                        <div class="settings-profile-info">
+                            <strong id="profileName">Administrator</strong>
+                            <span>System Admin</span>
+                            <span id="profileEmail">admin@healthscreen.local</span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="settings-button"
+                            onclick="editProfile()"
+                        >
+                            Edit Profile
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- SYSTEM INFORMATION -->
+                <div class="settings-card">
+
+                    <div class="settings-card-header">
+
+
+                        <div>
+                            <h3>System Information</h3>
+                            <p>Current system status</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-info-list">
+
+                        <div class="settings-info-row">
+                            <span>System Name</span>
+                            <strong>HealthScreen</strong>
+                        </div>
+
+                        <div class="settings-info-row">
+                            <span>System Version</span>
+                            <strong>v1.0.0</strong>
+                        </div>
+
+                        <div class="settings-info-row">
+                            <span>Kiosk Status</span>
+                            <strong class="settings-online">● Online</strong>
+                        </div>
+
+                        <div class="settings-info-row">
+                            <span>Database</span>
+                            <strong class="settings-online">Connected</strong>
+                        </div>
+                        <div class="settings-info-row">
+                            <span>Last Data Sync</span>
+                            <strong id="lastSync">Not yet synchronized</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- KIOSK SETTINGS -->
+                <div class="settings-card full-width">
+
+                    <div class="settings-card-header">
+
+
+                        <div>
+                            <h3>Kiosk Settings</h3>
+                            <p>Configure kiosk operation and synchronization preferences</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-form">
+
+                        <div class="settings-form-group">
+                            <label for="kioskName">Kiosk Name</label>
+                            <input
+                                type="text"
+                                id="kioskName"
+                                value="Barangay Health Screening Kiosk"
+                            >
+                        </div>
+
+                        <div class="settings-form-group">
+                            <label for="syncInterval">Data Sync Interval</label>
+                            <select id="syncInterval">
+                                <option value="15">15 seconds</option>
+                                <option value="30" selected>30 seconds</option>
+                                <option value="60">1 minute</option>
+                                <option value="300">5 minutes</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="settings-option-list">
+
+                        <div class="settings-option">
+                            <div class="settings-option-info">
+                                <strong>Auto Refresh</strong>
+                                <span>Automatically refresh dashboard information</span>
+                            </div>
+
+                            <label class="settings-toggle">
+                                <input type="checkbox" id="autoRefresh" checked>
+                                <span class="settings-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="settings-option">
+                            <div class="settings-option-info">
+                                <strong>Auto Sync</strong>
+                                <span>Automatically synchronize screening records</span>
+                            </div>
+
+                            <label class="settings-toggle">
+                                <input type="checkbox" id="autoSync" checked>
+                                <span class="settings-slider"></span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- NOTIFICATION SETTINGS -->
+                <div class="settings-card">
+
+                    <div class="settings-card-header">
+
+
+                        <div>
+                            <h3>Notification Settings</h3>
+                            <p>Choose which system events are enabled</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-option-list">
+
+                        <div class="settings-option">
+                            <div class="settings-option-info">
+                                <strong>New Screening Record</strong>
+                              
+                            </div>
+
+                            <label class="settings-toggle">
+                                <input type="checkbox" id="notifyNewScreening" checked>
+                                <span class="settings-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="settings-option">
+                            <div class="settings-option-info">
+                                <strong>Abnormal Result Alert</strong>
+                               
+                            </div>
+
+                            <label class="settings-toggle">
+                                <input type="checkbox" id="notifyAbnormalResult" checked>
+                                <span class="settings-slider"></span>
+                            </label>
+                        </div>
+
+<div class="settings-option">
+
+    <div class="settings-option-info">
+        <strong>System Offline Alert</strong>
+        <span>Notify when the kiosk becomes unavailable</span>
+    </div>
+
+    <label class="settings-toggle">
+        <input type="checkbox" id="notifySystemOffline" checked>
+        <span class="settings-slider"></span>
+    </label>
+
+</div>
+
+
+<div class="settings-option">
+
+    <div class="settings-option-info">
+        <strong>Confirmation Before Actions</strong>
+        <span>Ask for confirmation before system actions</span>
+    </div>
+
+    <label class="settings-toggle">
+        <input type="checkbox" id="confirmActions" checked>
+        <span class="settings-slider"></span>
+    </label>
+
+</div>
+
+                    </div>
+
+                </div>
+
+                <!-- SECURITY -->
+                <div class="settings-card">
+
+                    <div class="settings-card-header">
+
+
+                        <div>
+                            <h3>Security</h3>
+                            <p>Administrator security preferences</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-info-list">
+
+                        <div class="settings-info-row">
+                            <span>Password</span>
+                            <button
+                                type="button"
+                                class="settings-button"
+                                onclick="changePassword()"
+                            >
+                                Change Password
+                            </button>
+                        </div>
+
+                        <div class="settings-info-row">
+                            <span>Session Timeout</span>
+                            <select
+                                id="sessionTimeout"
+                                style="height:32px;padding:0 9px;border:1px solid var(--border);border-radius:6px;background:white;color:var(--text);font-family:inherit;font-size:10px;"
+                            >
+                                <option>15 minutes</option>
+                                <option selected>30 minutes</option>
+                                <option>60 minutes</option>
+                            </select>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+                <!-- SYSTEM ACTIONS -->
+<div class="settings-card full-width">
+
+    <div class="settings-card-header">
+
+        <div>
+            <h3>System Actions</h3>
+            <p>Administrative system actions</p>
+        </div>
+
+    </div>
+
+    <div class="settings-actions">
+        <span id="settingsSaveStatus" class="settings-save-status">
+    All changes saved
+</span>
+
+        <button
+            type="button"
+            class="settings-action-button primary"
+            onclick="openSystemActionModal('save')"
+        >
+            Save Changes
+        </button>
+
+        <button
+            type="button"
+            class="settings-action-button"
+            onclick="openSystemActionModal('reset')"
+        >
+            Reset Changes
+        </button>
+
+        <button
+            type="button"
+            class="settings-action-button"
+            onclick="openSystemActionModal('sync')"
+        >
+            Sync Data Now
+        </button>
+
+    </div>
+
+</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- EDIT PROFILE MODAL -->
+
+<div id="profileModal" class="settings-modal">
+
+    <div class="settings-modal-box">
+
+        <div class="settings-modal-header">
+            <div>
+                <h3>Edit Administrator Profile</h3>
+                <p>Update administrator account information</p>
+            </div>
+
+            <button
+                type="button"
+                class="settings-modal-close"
+                onclick="closeProfileModal()"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="settings-modal-form">
+
+            <div class="settings-form-group">
+                <label for="editProfileName">Administrator Name</label>
+                <input
+                    type="text"
+                    id="editProfileName"
+                >
+            </div>
+
+            <div class="settings-form-group">
+                <label for="editProfileEmail">Email Address</label>
+                <input
+                    type="email"
+                    id="editProfileEmail"
+                >
+            </div>
+
+        </div>
+
+        <div class="settings-modal-actions">
+
+            <button
+                type="button"
+                class="settings-action-button"
+                onclick="closeProfileModal()"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="settings-action-button primary"
+                onclick="saveProfile()"
+            >
+                Save Profile
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CHANGE PASSWORD MODAL -->
+
+<div id="passwordModal" class="settings-modal">
+
+    <div class="settings-modal-box">
+
+        <div class="settings-modal-header">
+            <div>
+                <h3>Change Password</h3>
+                <p>Update your administrator password</p>
+            </div>
+
+            <button
+                type="button"
+                class="settings-modal-close"
+                onclick="closePasswordModal()"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="settings-modal-form">
+
+            <div class="settings-form-group">
+                <label for="currentPassword">Current Password</label>
+                <input
+                    type="password"
+                    id="currentPassword"
+                >
+            </div>
+
+            <div class="settings-form-group">
+                <label for="newPassword">New Password</label>
+                <input
+                    type="password"
+                    id="newPassword"
+                >
+            </div>
+
+            <div class="settings-form-group">
+                <label for="confirmNewPassword">Confirm New Password</label>
+                <input
+                    type="password"
+                    id="confirmNewPassword"
+                >
+            </div>
+
+        </div>
+
+        <div class="settings-modal-actions">
+
+            <button
+                type="button"
+                class="settings-action-button"
+                onclick="closePasswordModal()"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="settings-action-button primary"
+                onclick="savePassword()"
+            >
+                Update Password
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- SYSTEM ACTION CONFIRMATION MODAL -->
+
+<div id="systemActionModal" class="settings-modal">
+
+    <div class="settings-modal-box">
+
+        <div class="settings-modal-header">
+
+            <div>
+                <h3 id="systemActionTitle">Confirm Action</h3>
+                <p id="systemActionMessage">
+                    Are you sure you want to continue?
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="settings-modal-close"
+                onclick="closeSystemActionModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div class="settings-modal-actions">
+
+            <button
+                type="button"
+                class="settings-action-button"
+                onclick="closeSystemActionModal()"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="systemActionConfirmButton"
+                class="settings-action-button primary"
+                onclick="confirmSystemAction()"
+            >
+                Confirm
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SYSTEM ACTION RESULT MODAL -->
+
+<div id="systemResultModal" class="settings-modal">
+
+    <div class="settings-modal-box">
+
+        <div class="settings-modal-header">
+
+            <div>
+                <h3 id="systemResultTitle">Action Completed</h3>
+
+                <p id="systemResultMessage">
+                    The requested action has been completed successfully.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="settings-modal-close"
+                onclick="closeSystemResultModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div class="settings-modal-actions">
+
+            <button
+                type="button"
+                class="settings-action-button primary"
+                onclick="closeSystemResultModal()"
+            >
+                OK
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- UNSAVED CHANGES MODAL -->
+
+<div id="unsavedChangesModal" class="settings-modal">
+
+    <div class="settings-modal-box">
+
+        <div class="settings-modal-header">
+
+            <div>
+                <h3>Unsaved Changes?</h3>
+                <p>
+                    You have unsaved changes. Are you sure you want to leave this page?
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="settings-modal-close"
+                onclick="closeUnsavedChangesModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div class="settings-modal-actions">
+
+            <button
+                type="button"
+                class="settings-action-button"
+                onclick="closeUnsavedChangesModal()"
+            >
+                Stay
+            </button>
+
+            <button
+                type="button"
+                id="leavePageButton"
+                class="settings-action-button primary"
+                onclick="confirmLeavePage()"
+            >
+                Leave Page
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const SETTINGS_KEY = 'healthScreenSettings';
+
+const defaultSettings = {
+    kioskName: 'Barangay Health Screening Kiosk',
+    syncInterval: '30',
+    autoRefresh: true,
+    autoSync: true,
+    notifyNewScreening: true,
+    notifyAbnormalResult: true,
+    notifySystemOffline: true,
+    sessionTimeout: '30 minutes',
+    confirmActions: true
+};
+
+
+/* GET THE 6 EXISTING CHECKBOXES */
+
+function getCheckboxes() {
+    return document.querySelectorAll(
+        '.settings-toggle input[type="checkbox"]'
+    );
+}
+
+
+/* LOAD SETTINGS */
+
+function loadSettings() {
+
+    const savedSettings =
+        JSON.parse(localStorage.getItem(SETTINGS_KEY)) ||
+        defaultSettings;
+
+    document.getElementById('kioskName').value =
+        savedSettings.kioskName;
+
+    document.getElementById('syncInterval').value =
+        savedSettings.syncInterval;
+
+    document.getElementById('sessionTimeout').value =
+        savedSettings.sessionTimeout;
+
+    const checkboxes = getCheckboxes();
+
+    checkboxes[0].checked = savedSettings.autoRefresh;
+    checkboxes[1].checked = savedSettings.autoSync;
+
+    checkboxes[2].checked = savedSettings.notifyNewScreening;
+    checkboxes[3].checked = savedSettings.notifyAbnormalResult;
+    checkboxes[4].checked = savedSettings.notifySystemOffline;
+
+    checkboxes[5].checked = savedSettings.confirmActions;
+}
+
+
+/* SAVE SETTINGS */
+
+let pendingSystemAction = null;
+
+function openSystemActionModal(action) {
+
+    const checkboxes = getCheckboxes();
+    const confirmActions = checkboxes[5].checked;
+
+    if (!confirmActions) {
+
+        if (action === "save") {
+            saveSettings();
+            return;
+        }
+
+        if (action === "reset") {
+            resetSettings();
+            return;
+        }
+
+        if (action === "sync") {
+            syncData();
+            return;
+        }
+    }
+
+    pendingSystemAction = action;
+
+    const title = document.getElementById("systemActionTitle");
+    const message = document.getElementById("systemActionMessage");
+    const confirmButton =
+        document.getElementById("systemActionConfirmButton");
+
+    if (action === "save") {
+        title.textContent = "Save Changes?";
+        message.textContent =
+            "Are you sure you want to save the current system settings?";
+        confirmButton.textContent = "Save Changes";
+    }
+
+    if (action === "reset") {
+        title.textContent = "Reset Changes?";
+        message.textContent =
+            "This will restore the settings to their default values. Continue?";
+        confirmButton.textContent = "Reset Changes";
+    }
+
+    if (action === "sync") {
+        title.textContent = "Sync Data?";
+        message.textContent =
+            "Synchronize the latest screening data with the system?";
+        confirmButton.textContent = "Sync Data";
+    }
+
+    document
+        .getElementById("systemActionModal")
+        .classList.add("show");
+}
+
+
+function closeSystemActionModal() {
+
+    document
+        .getElementById("systemActionModal")
+        .classList.remove("show");
+
+    pendingSystemAction = null;
+}
+
+
+function confirmSystemAction() {
+
+    if (pendingSystemAction === "save") {
+        saveSettings();
+    }
+
+    else if (pendingSystemAction === "reset") {
+        resetSettings();
+    }
+
+    else if (pendingSystemAction === "sync") {
+        syncData();
+    }
+
+    closeSystemActionModal();
+}
+
+function showSystemResult(title, message) {
+
+    document.getElementById('systemResultTitle').textContent = title;
+
+    document.getElementById('systemResultMessage').textContent = message;
+
+    document
+        .getElementById('systemResultModal')
+        .classList.add('show');
+}
+
+
+function closeSystemResultModal() {
+
+    document
+        .getElementById('systemResultModal')
+        .classList.remove('show');
+}
+
+
+function saveSettings() {
+
+    const checkboxes = getCheckboxes();
+
+    const settings = {
+
+        kioskName:
+            document.getElementById('kioskName').value,
+
+        syncInterval:
+            document.getElementById('syncInterval').value,
+
+        autoRefresh:
+            checkboxes[0].checked,
+
+        autoSync:
+            checkboxes[1].checked,
+
+
+        notifyNewScreening:
+            checkboxes[2].checked,
+
+        notifyAbnormalResult:
+            checkboxes[3   ].checked,
+
+        notifySystemOffline:
+            checkboxes[4].checked,
+
+        sessionTimeout:
+            document.getElementById('sessionTimeout').value,
+
+        confirmActions:
+            checkboxes[5].checked
+    };
+
+    localStorage.setItem(
+        SETTINGS_KEY,
+        JSON.stringify(settings)
+    );
+
+    setSettingsSaveStatus(false);
+
+    closeSystemActionModal();
+
+    showSystemResult(
+        'Settings Saved',
+        'The current system settings have been saved successfully.'
+    );
+}
+
+
+function resetSettings() {
+
+    localStorage.setItem(
+        SETTINGS_KEY,
+        JSON.stringify(defaultSettings)
+    );
+
+    loadSettings();
+
+    setSettingsSaveStatus(false);
+
+    closeSystemActionModal();
+
+    showSystemResult(
+        'Settings Reset',
+        'All system settings have been restored to their default values.'
+    );
+}
+
+
+function syncData(showResult = true) {
+
+    const syncTime = new Date().toLocaleString();
+
+    localStorage.setItem(
+        'healthScreenLastSync',
+        syncTime
+    );
+
+    updateLastSync();
+
+    if (showResult) {
+        closeSystemActionModal();
+
+        showSystemResult(
+            'Data Synchronized',
+            'The latest screening data has been synchronized successfully.'
+        );
+    }
+}
+
+
+function updateLastSync() {
+
+    const lastSync =
+        localStorage.getItem('healthScreenLastSync');
+
+    const lastSyncElement =
+        document.getElementById('lastSync');
+
+    if (lastSync && lastSyncElement) {
+
+        lastSyncElement.textContent = lastSync;
+
+    }
+}
+
+
+/* LOAD SAVED SETTINGS WHEN PAGE OPENS */
+
+document.addEventListener('DOMContentLoaded', function () {
+    loadSettings();
+    loadProfile();
+    updateLastSync();
+    initializeAutoRefresh();
+    initializeAutoSync();
+});
+function initializeAutoRefresh() {
+
+    const autoRefresh =
+        document.getElementById('autoRefresh');
+
+    const syncInterval =
+        document.getElementById('syncInterval');
+
+    if (!autoRefresh || !syncInterval) {
+        return;
+    }
+
+    let refreshTimer = null;
+
+    function startAutoRefresh() {
+
+        if (refreshTimer) {
+            clearInterval(refreshTimer);
+            refreshTimer = null;
+        }
+
+        if (!autoRefresh.checked) {
+            return;
+        }
+
+        const interval =
+            parseInt(syncInterval.value, 10) * 1000;
+
+        refreshTimer = setInterval(function () {
+
+            window.location.reload();
+
+        }, interval);
+    }
+
+    autoRefresh.addEventListener(
+        'change',
+        startAutoRefresh
+    );
+
+    syncInterval.addEventListener(
+        'change',
+        startAutoRefresh
+    );
+
+    startAutoRefresh();
+}
+
+
+/* =========================================================
+   AUTO SYNC
+========================================================= */
+
+function initializeAutoSync() {
+
+    const autoSync =
+        document.getElementById('autoSync');
+
+    const syncInterval =
+        document.getElementById('syncInterval');
+
+    if (!autoSync || !syncInterval) {
+        return;
+    }
+
+    let syncTimer = null;
+
+    function startAutoSync() {
+
+        if (syncTimer) {
+            clearInterval(syncTimer);
+            syncTimer = null;
+        }
+
+        if (!autoSync.checked) {
+            return;
+        }
+
+        const interval =
+            parseInt(syncInterval.value, 10) * 1000;
+
+        syncTimer = setInterval(function () {
+
+            syncData(false);
+
+        }, interval);
+    }
+
+    autoSync.addEventListener(
+        'change',
+        startAutoSync
+    );
+
+    syncInterval.addEventListener(
+        'change',
+        startAutoSync
+    );
+
+    startAutoSync();
+}
+document.addEventListener('DOMContentLoaded', function () {
+
+    const settingsControls =
+        document.querySelectorAll(
+            '#kioskName, #syncInterval, #sessionTimeout, .settings-toggle input'
+        );
+
+    settingsControls.forEach(function (control) {
+
+        control.addEventListener('change', function () {
+            setSettingsSaveStatus(true);
+        });
+
+        control.addEventListener('input', function () {
+            setSettingsSaveStatus(true);
+        });
+
+    });
+
+});
+/* PROFILE */
+
+function loadProfile() {
+
+    const profile = JSON.parse(
+        localStorage.getItem('healthScreenProfile')
+    );
+
+    if (!profile) {
+        return;
+    }
+
+    document.getElementById('profileName').textContent =
+        profile.name;
+
+    document.getElementById('profileEmail').textContent =
+        profile.email;
+
+        
+
+    const initials = profile.name
+        .trim()
+        .split(/\s+/)
+        .map(function (word) {
+            return word.charAt(0);
+        })
+        .join('')
+        .substring(0, 2)
+        .toUpperCase();
+
+
+    /* Sidebar name */
+
+    const sidebarName =
+        document.getElementById('sidebarProfileName');
+
+    if (sidebarName) {
+        sidebarName.textContent = profile.name;
+    }
+
+
+    /* Sidebar avatar */
+
+    const sidebarAvatar =
+        document.getElementById('sidebarProfileAvatar');
+
+    if (sidebarAvatar) {
+        sidebarAvatar.textContent = initials;
+    }
+
+
+    /* Settings avatar */
+
+    const settingsAvatar =
+        document.getElementById('settingsProfileAvatar');
+
+    if (settingsAvatar) {
+        settingsAvatar.textContent = initials;
+    }
+
+}
+
+
+function editProfile() {
+
+    document.getElementById('editProfileName').value =
+        document.getElementById('profileName').textContent;
+
+    document.getElementById('editProfileEmail').value =
+        document.getElementById('profileEmail').textContent;
+
+    document.getElementById('profileModal').classList.add('show');
+}
+
+function closeProfileModal() {
+
+    document.getElementById('profileModal')
+        .classList.remove('show');
+}
+
+
+function saveProfile() {
+
+    const name =
+        document.getElementById('editProfileName').value.trim();
+
+    const email =
+        document.getElementById('editProfileEmail').value.trim();
+
+    if (name === '') {
+        showSystemResult(
+    'Invalid Name',
+    'Administrator name cannot be empty.'
+);
+        return;
+    }
+
+    if (email === '') {
+        showSystemResult(
+    'Invalid Email',
+    'Administrator email cannot be empty.'
+);
+        return;
+    }
+
+    const profile = {
+        name: name,
+        email: email
+    };
+
+    localStorage.setItem(
+        'healthScreenProfile',
+        JSON.stringify(profile)
+    );
+
+    loadProfile();
+    closeProfileModal();
+
+    showSystemResult(
+    'Profile Updated',
+    'Administrator profile information has been updated successfully.'
+);
+}
+
+/* PASSWORD */
+
+function changePassword() {
+
+    document.getElementById('currentPassword').value = '';
+    document.getElementById('newPassword').value = '';
+    document.getElementById('confirmNewPassword').value = '';
+
+    document.getElementById('passwordModal')
+        .classList.add('show');
+}
+
+function closePasswordModal() {
+
+    document.getElementById('passwordModal')
+        .classList.remove('show');
+}
+
+
+function savePassword() {
+
+    const currentPassword =
+        document.getElementById('currentPassword').value;
+
+    const newPassword =
+        document.getElementById('newPassword').value;
+
+    const confirmPassword =
+        document.getElementById('confirmNewPassword').value;
+    const savedPassword =
+        localStorage.getItem('healthScreenAdminPassword') ||
+        'admin123';
+    if (currentPassword === '') {
+        showSystemResult(
+    'Missing Password',
+    'Please enter your current password.'
+);
+        return;
+    }
+    if (currentPassword !== savedPassword) {
+        showSystemResult(
+            'Incorrect Password',
+            'The current password you entered is incorrect.'
+        );
+        return;
+    }
+    if (newPassword.length < 8) {
+        showSystemResult(
+    'Invalid Password',
+    'New password must contain at least 8 characters.'
+);
+        return;
+    }
+
+    if (newPassword !== confirmPassword) {
+        showSystemResult(
+            'Password Mismatch',
+            'New passwords do not match.'
+        );
+        return;
+    }
+
+    localStorage.setItem(
+        'healthScreenAdminPassword',
+        newPassword
+    );
+
+    closePasswordModal();
+
+    showSystemResult(
+    'Password Updated',
+    'Administrator password has been updated successfully.'
+);
+}
+
+function setSettingsSaveStatus(unsaved) {
+
+    const status =
+        document.getElementById('settingsSaveStatus');
+
+    if (!status) {
+        return;
+    }
+
+    if (unsaved) {
+
+        status.textContent = 'Unsaved changes';
+        status.classList.add('unsaved');
+
+    } else {
+
+        status.textContent = 'All changes saved';
+        status.classList.remove('unsaved');
+
+    }
+}
+/* UNSAVED CHANGES PROTECTION */
+
+function hasUnsavedChanges() {
+
+    const status =
+        document.getElementById('settingsSaveStatus');
+
+    return status &&
+           status.classList.contains('unsaved');
+}
+
+
+/* Browser refresh / close */
+
+window.addEventListener('beforeunload', function (event) {
+
+    if (hasUnsavedChanges() && !allowNavigation) {
+        event.preventDefault();
+        event.returnValue = '';
+    }
+
+});
+
+let pendingNavigation = null;
+let allowNavigation = false;
+
+function closeUnsavedChangesModal() {
+    document
+        .getElementById('unsavedChangesModal')
+        .classList.remove('show');
+
+    pendingNavigation = null;
+}
+
+function confirmLeavePage() {
+    if (pendingNavigation) {
+
+        const target = pendingNavigation;
+
+        allowNavigation = true;
+
+        closeUnsavedChangesModal();
+
+        window.location.href = target;
+    }
+}
+
+
+/* Sidebar navigation */
+
+document.querySelectorAll('.sidebar a').forEach(function (link) {
+
+    link.addEventListener('click', function (event) {
+
+        if (!hasUnsavedChanges()) {
+            return;
+        }
+
+pendingNavigation = link.href;
+document.getElementById('unsavedChangesModal').classList.add('show');
+event.preventDefault();
+
+    });
+
+});
+</script>
+
+</body>
+</html>

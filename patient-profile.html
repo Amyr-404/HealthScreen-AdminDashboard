@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Patient Profile | HealthScreen</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+ <aside class="sidebar">
+
+    <div class="logo-area">
+
+        <img
+            src="images/healthscreen-sidebar-logo-transparent.png"
+            class="sidebar-logo-full"
+            alt="HealthScreen"
+        >
+
+        <img
+            src="images/healthscreen-sidebar-icon-transparent.png"
+            class="sidebar-logo-icon"
+            alt="HealthScreen"
+        >
+
+    </div>
+
+    <nav class="navigation">
+
+        <a href="dashboard.html" class="nav-item">
+            <img
+                src="images/dashboard-sidebar-icon.png"
+                class="nav-icon-image"
+                alt="Dashboard"
+            >
+            <span>Dashboard</span>
+        </a>
+
+        <a href="patients.html" class="nav-item active">
+            <img
+                src="images/patients-sidebar-icon.png"
+                class="nav-icon-image"
+                alt="Patients"
+            >
+            <span>Patients</span>
+        </a>
+
+        <a href="screening-records.html" class="nav-item">
+            <img
+                src="images/screening-records-sidebar-icon.png"
+                class="nav-icon-image"
+                alt="Screening Records"
+            >
+            <span>Screening Records</span>
+        </a>
+
+        <a href="patient-history.html" class="nav-item">
+            <img
+                src="images/patient-history-sidebar-icon.png"
+                class="nav-icon-image"
+                alt="Patient History"
+            >
+            <span>Patient History</span>
+        </a>
+
+        <a href="reports.html" class="nav-item">
+            <img
+                src="images/reports-sidebar-icon.png"
+                class="nav-icon-image"
+                alt="Reports"
+            >
+            <span>Reports</span>
+        </a>
+
+        <a href="settings.html" class="nav-item">
+            <img
+                src="images/settings-sidebar-icon.png"
+                class="nav-icon-image"
+                alt="Settings"
+            >
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+    <div class="system-status">
+
+        <span class="status-dot"></span>
+
+        <div>
+            <strong>System Online</strong>
+            <small>All services operational</small>
+        </div>
+
+    </div>
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-profile">
+
+            <div
+                class="profile-avatar"
+                id="sidebarProfileAvatar"
+            >A</div>
+
+            <div class="profile-info">
+
+                <strong id="sidebarProfileName">
+                    Administrator
+                </strong>
+
+                <span>
+                    System Admin
+                </span>
+
+            </div>
+
+        </div>
+
+        <a href="index.html" class="logout">
+            <span>⇥</span>
+            Logout
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ==========================================
+             PATIENT PROFILE CONTENT
+        =========================================== -->
+
+        <section class="patient-profile-page">
+
+
+            <!-- BACK BUTTON -->
+
+            <a
+                href="patients.html"
+                class="back-button"
+            >
+                ← Back to Patients
+            </a>
+
+
+
+            <!-- ======================================
+                 PATIENT HEADER CARD
+            ======================================= -->
+
+            <div class="patient-profile-header">
+
+                <div class="large-patient-avatar" id="patientAvatar">
+                    JD
+                </div>
+
+
+                <div class="patient-header-info">
+
+                    <h2 id="patientName">
+                        Juan Dela Cruz
+                    </h2>
+
+                    <p id="patientLocation">
+                        Barangay Molino III
+                    </p>
+
+                </div>
+
+
+                <div class="patient-header-id">
+
+                    <span>
+                        PATIENT ID
+                    </span>
+
+                    <strong id="patientId">
+                        PT-000124
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 PERSONAL INFORMATION
+            ======================================= -->
+
+            <div class="profile-panel">
+
+                <div class="profile-panel-header">
+
+                    <div>
+
+                        <h3>
+                            Personal Information
+                        </h3>
+
+                        <p>
+                            Registered patient details
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="personal-info-grid">
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Age
+                        </span>
+
+                        <strong id="patientAge">
+                            45 years old
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Sex
+                        </span>
+
+                        <strong id="patientSex">
+                            Male
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Date of Birth
+                        </span>
+
+                        <strong id="patientBirth">
+                            January 15, 1981
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Contact Number
+                        </span>
+
+                        <strong id="patientContact">
+                            09XX-XXX-XXXX
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item info-wide">
+
+                        <span>
+                            Address
+                        </span>
+
+                        <strong id="patientAddress">
+                            Barangay Molino III, Bacoor City, Cavite
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 LATEST SCREENING
+            ======================================= -->
+
+            <div class="profile-panel">
+
+                <div class="profile-panel-header">
+
+                    <div>
+
+                        <h3>
+                            Latest Screening
+                        </h3>
+
+                        <p id="latestScreeningDate">
+                            September 23, 2026
+                        </p>
+
+                    </div>
+
+
+                    <span
+                        class="badge normal-badge"
+                        id="latestStatus"
+                    >
+                        Normal
+                    </span>
+
+                </div>
+
+
+
+                <div class="measurement-grid">
+
+
+                    <!-- WEIGHT -->
+
+                    <div class="measurement-card">
+
+                        <div class="measurement-icon weight-icon">
+                            ⚖
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Weight
+                            </span>
+
+                            <strong id="weight">
+                                70.0 kg
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- HEIGHT -->
+
+                    <div class="measurement-card">
+
+                        <div class="measurement-icon height-icon">
+                            ↕
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Height
+                            </span>
+
+                            <strong id="height">
+                                170 cm
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BMI -->
+
+                    <div class="measurement-card">
+
+                        <div class="measurement-icon bmi-icon">
+                            BMI
+                        </div>
+
+                        <div>
+
+                            <span>
+                                BMI
+                            </span>
+
+                            <strong id="bmi">
+                                24.2
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TEMPERATURE -->
+
+                    <div class="measurement-card">
+
+                        <div class="measurement-icon temperature-icon">
+                            🌡
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Temperature
+                            </span>
+
+                            <strong id="temperature">
+                                36.5 °C
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- HEART RATE -->
+
+                    <div class="measurement-card">
+
+                        <div class="measurement-icon heart-icon">
+                            ♥
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Heart Rate
+                            </span>
+
+                            <strong id="heartRate">
+                                78 BPM
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SPO2 -->
+
+                    <div class="measurement-card">
+
+                        <div class="measurement-icon oxygen-icon">
+                            O₂
+                        </div>
+
+                        <div>
+
+                            <span>
+                                SpO₂
+                            </span>
+
+                            <strong id="spo2">
+                                98 %
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BLOOD PRESSURE -->
+
+                    <div class="measurement-card blood-pressure-card">
+
+                        <div class="measurement-icon bp-icon">
+                            BP
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Blood Pressure
+                            </span>
+
+                            <strong id="bloodPressure">
+                                120/80 mmHg
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 SCREENING HISTORY
+            ======================================= -->
+
+            <div class="profile-panel">
+
+                <div class="profile-panel-header">
+
+                    <div>
+
+                        <h3>
+                            Screening History
+                        </h3>
+
+                        <p>
+                            Previous health screening records
+                        </p>
+
+                    </div>
+
+
+                <button
+                    class="print-button"
+                    onclick="window.print()"
+                    >
+                    🖨 Print
+                </button>
+
+                </div>
+
+
+                <div class="history-table-container">
+
+                    <table class="history-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    BMI
+                                </th>
+
+                                <th>
+                                    Temperature
+                                </th>
+
+                                <th>
+                                    Heart Rate
+                                </th>
+
+                                <th>
+                                    SpO₂
+                                </th>
+
+                                <th>
+                                    Blood Pressure
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="historyTable">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   DEMO PATIENT DATA
+   ========================================================= */
+
+const demoPatients = {
+
+    "PT-000124": {
+
+        initials: "JD",
+        name: "Juan Dela Cruz",
+        location: "Barangay Molino III",
+
+        age: "45 years old",
+        sex: "Male",
+
+        birth: "January 15, 1981",
+
+        contact: "09XX-XXX-XXXX",
+
+        address:
+            "Barangay Molino III, Bacoor City, Cavite",
+
+        date:
+            "September 23, 2026",
+
+        status: "Normal",
+
+        weight: "70.0 kg",
+        height: "170 cm",
+        bmi: "24.2",
+
+        temperature: "36.5 °C",
+
+        heartRate: "78 BPM",
+
+        spo2: "98 %",
+
+        bloodPressure: "120/80 mmHg"
+
+    },
+
+
+    "PT-000123": {
+
+        initials: "MS",
+        name: "Maria Santos",
+        location: "Barangay Molino III",
+
+        age: "38 years old",
+        sex: "Female",
+
+        birth: "June 21, 1988",
+
+        contact: "09XX-XXX-XXXX",
+
+        address:
+            "Barangay Molino III, Bacoor City, Cavite",
+
+        date:
+            "September 23, 2026",
+
+        status: "Caution",
+
+        weight: "68.5 kg",
+        height: "158 cm",
+        bmi: "27.4",
+
+        temperature: "36.7 °C",
+
+        heartRate: "84 BPM",
+
+        spo2: "97 %",
+
+        bloodPressure: "135/85 mmHg"
+
+    },
+
+
+    "PT-000122": {
+
+        initials: "PR",
+        name: "Pedro Reyes",
+        location: "Barangay Molino III",
+
+        age: "52 years old",
+        sex: "Male",
+
+        birth: "March 8, 1974",
+
+        contact: "09XX-XXX-XXXX",
+
+        address:
+            "Barangay Molino III, Bacoor City, Cavite",
+
+        date:
+            "September 22, 2026",
+
+        status: "Normal",
+
+        weight: "66.0 kg",
+        height: "173 cm",
+        bmi: "22.1",
+
+        temperature: "36.4 °C",
+
+        heartRate: "72 BPM",
+
+        spo2: "98 %",
+
+        bloodPressure: "118/76 mmHg"
+
+    },
+
+
+    "PT-000121": {
+
+        initials: "AC",
+        name: "Ana Cruz",
+        location: "Barangay Molino III",
+
+        age: "61 years old",
+        sex: "Female",
+
+        birth: "February 12, 1965",
+
+        contact: "09XX-XXX-XXXX",
+
+        address:
+            "Barangay Molino III, Bacoor City, Cavite",
+
+        date:
+            "September 22, 2026",
+
+        status: "Abnormal",
+
+        weight: "78.0 kg",
+        height: "161 cm",
+        bmi: "30.2",
+
+        temperature: "37.1 °C",
+
+        heartRate: "96 BPM",
+
+        spo2: "95 %",
+
+        bloodPressure: "145/92 mmHg"
+
+    }
+
+};
+
+
+/* =========================================================
+   GET PATIENT ID FROM URL
+   ========================================================= */
+
+const urlParams =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const patientId =
+    urlParams.get("id");
+
+    
+
+/* =========================================================
+   CHECK REGISTERED PATIENTS
+   ========================================================= */
+
+const registeredPatients =
+    JSON.parse(
+        localStorage.getItem("registeredPatients")
+    ) || [];
+
+
+const registeredPatient =
+    registeredPatients.find(
+        function(patient) {
+
+            return patient.id === patientId;
+
+        }
+    );
+
+
+/* =========================================================
+   SELECT PATIENT
+   ========================================================= */
+
+let patient;
+
+let isNewPatient = false;
+
+
+if (registeredPatient) {
+
+    /*
+     * Patient was created using
+     * Add Patient.
+     */
+
+    patient = registeredPatient;
+
+    isNewPatient = true;
+
+}
+
+else if (demoPatients[patientId]) {
+
+    /*
+     * Existing demonstration patient.
+     */
+
+    patient = demoPatients[patientId];
+
+}
+
+else {
+
+    /*
+     * Fallback.
+     */
+
+    patient =
+        demoPatients["PT-000124"];
+
+}
+
+/* =========================================================
+   LOAD SAVED SCREENING RECORDS
+========================================================= */
+
+const savedScreeningRecords =
+    JSON.parse(
+        localStorage.getItem("screeningRecords")
+    ) || [];
+
+
+const patientSavedRecords =
+    savedScreeningRecords.filter(
+        function (record) {
+
+            return record.patientId === patientId;
+
+        }
+    );
+
+
+/* =========================================================
+   GET LATEST SAVED SCREENING
+========================================================= */
+
+let latestSavedRecord = null;
+
+
+if (patientSavedRecords.length > 0) {
+
+    latestSavedRecord =
+        patientSavedRecords[
+            patientSavedRecords.length - 1
+        ];
+
+}
+
+/* =========================================================
+   CALCULATE AGE
+   ========================================================= */
+
+function calculateAge(birthDate) {
+
+    if (!birthDate) {
+        return "-";
+    }
+
+
+    const birth =
+        new Date(birthDate);
+
+    const today =
+        new Date();
+
+
+    let age =
+        today.getFullYear() -
+        birth.getFullYear();
+
+
+    const monthDifference =
+        today.getMonth() -
+        birth.getMonth();
+
+
+    if (
+        monthDifference < 0 ||
+        (
+            monthDifference === 0 &&
+            today.getDate() < birth.getDate()
+        )
+    ) {
+
+        age--;
+
+    }
+
+
+    return age;
+
+}
+
+
+/* =========================================================
+   PREPARE REGISTERED PATIENT DATA
+   ========================================================= */
+
+if (isNewPatient) {
+
+    const age =
+        calculateAge(
+            patient.birthDate
+        );
+
+
+    patient.age =
+        age === "-"
+            ? "-"
+            : age + " years old";
+
+
+    patient.birth =
+        patient.birthDate
+            ? new Date(
+                patient.birthDate +
+                "T00:00:00"
+              ).toLocaleDateString(
+                "en-US",
+                {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                }
+              )
+            : "-";
+
+
+    patient.date =
+        "Not yet screened";
+
+
+    patient.status =
+        "Not Yet Screened";
+
+
+    patient.weight =
+        "—";
+
+    patient.height =
+        "—";
+
+    patient.bmi =
+        "—";
+
+    patient.temperature =
+        "—";
+
+    patient.heartRate =
+        "—";
+
+    patient.spo2 =
+        "—";
+
+    patient.bloodPressure =
+        "—";
+
+}
+
+
+/* =========================================================
+   DISPLAY BASIC INFORMATION
+   ========================================================= */
+
+document
+    .getElementById("patientAvatar")
+    .textContent =
+        patient.initials;
+
+
+document
+    .getElementById("patientName")
+    .textContent =
+        patient.name;
+
+
+document
+    .getElementById("patientLocation")
+    .textContent =
+        patient.location;
+
+
+document
+    .getElementById("patientId")
+    .textContent =
+        patientId || patient.id;
+
+
+document
+    .getElementById("patientAge")
+    .textContent =
+        patient.age;
+
+
+document
+    .getElementById("patientSex")
+    .textContent =
+        patient.sex;
+
+
+document
+    .getElementById("patientBirth")
+    .textContent =
+        patient.birth;
+
+
+document
+    .getElementById("patientContact")
+    .textContent =
+        patient.contact || "—";
+
+
+document
+    .getElementById("patientAddress")
+    .textContent =
+        patient.address;
+
+
+/* =========================================================
+   LATEST SCREENING
+========================================================= */
+
+if (latestSavedRecord) {
+
+    document
+        .getElementById("latestScreeningDate")
+        .textContent =
+            latestSavedRecord.date;
+
+}
+else {
+
+    document
+        .getElementById("latestScreeningDate")
+        .textContent =
+            patient.date;
+
+}
+/* =========================================================
+   MEASUREMENTS
+========================================================= */
+
+const screeningData =
+    latestSavedRecord || patient;
+
+
+document
+    .getElementById("weight")
+    .textContent =
+        screeningData.weight || "—";
+
+
+document
+    .getElementById("height")
+    .textContent =
+        screeningData.height || "—";
+
+
+document
+    .getElementById("bmi")
+    .textContent =
+        screeningData.bmi || "—";
+
+
+document
+    .getElementById("temperature")
+    .textContent =
+        screeningData.temperature || "—";
+
+
+document
+    .getElementById("heartRate")
+    .textContent =
+        screeningData.heartRate || "—";
+
+
+document
+    .getElementById("spo2")
+    .textContent =
+        screeningData.spo2 || "—";
+
+
+document
+    .getElementById("bloodPressure")
+    .textContent =
+        screeningData.bloodPressure || "—";
+/* =========================================================
+   STATUS
+========================================================= */
+
+const statusElement =
+    document.getElementById(
+        "latestStatus"
+    );
+
+
+const latestStatus =
+    latestSavedRecord
+        ? latestSavedRecord.status
+        : patient.status;
+
+
+statusElement.textContent =
+    latestStatus;
+
+
+statusElement.className =
+    "badge";
+
+
+if (latestStatus === "Normal") {
+
+    statusElement.classList.add(
+        "normal-badge"
+    );
+
+}
+
+else if (latestStatus === "Caution") {
+
+    statusElement.classList.add(
+        "caution-badge"
+    );
+
+}
+
+else if (latestStatus === "Abnormal") {
+
+    statusElement.classList.add(
+        "abnormal-badge"
+    );
+
+}
+
+else {
+
+    statusElement.classList.add(
+        "not-screened-badge"
+    );
+
+}
+
+
+/* =========================================================
+   SCREENING HISTORY
+   ========================================================= */
+
+const historyTable =
+    document.getElementById(
+        "historyTable"
+    );
+
+
+if (isNewPatient) {
+
+    historyTable.innerHTML = `
+
+        <tr>
+
+            <td colspan="8"
+                style="
+                    text-align:center;
+                    padding:30px;
+                    color:#7b8794;
+                "
+            >
+
+                No screening records yet.
+
+                <br>
+
+                <small>
+                    This patient has not completed
+                    a health screening.
+                </small>
+
+            </td>
+
+        </tr>
+
+    `;
+
+}
+/* =====================================================
+   SCREENING RECORDS
+===================================================== */
+
+const screeningRecords = {
+
+    "PT-000124": [
+        {
+            date: "Sept 23, 2026",
+            bmi: "24.2",
+            temperature: "36.5 °C",
+            heartRate: "78 BPM",
+            spo2: "98 %",
+            bloodPressure: "120/80",
+            status: "Normal"
+        },
+        {
+            date: "Sept 10, 2026",
+            bmi: "24.5",
+            temperature: "36.6 °C",
+            heartRate: "80 BPM",
+            spo2: "97 %",
+            bloodPressure: "122/82",
+            status: "Normal"
+        },
+        {
+            date: "Aug 27, 2026",
+            bmi: "25.0",
+            temperature: "36.4 °C",
+            heartRate: "76 BPM",
+            spo2: "98 %",
+            bloodPressure: "128/84",
+            status: "Normal"
+        }
+    ],
+
+    "PT-000123": [
+        {
+            date: "Sept 23, 2026",
+            bmi: "27.4",
+            temperature: "36.7 °C",
+            heartRate: "84 BPM",
+            spo2: "97 %",
+            bloodPressure: "135/85",
+            status: "Caution"
+        }
+    ],
+
+    "PT-000122": [
+        {
+            date: "Sept 22, 2026",
+            bmi: "22.1",
+            temperature: "36.4 °C",
+            heartRate: "72 BPM",
+            spo2: "98 %",
+            bloodPressure: "118/76",
+            status: "Normal"
+        }
+    ],
+
+    "PT-000121": [
+        {
+            date: "Sept 22, 2026",
+            bmi: "30.2",
+            temperature: "37.1 °C",
+            heartRate: "96 BPM",
+            spo2: "95 %",
+            bloodPressure: "145/92",
+            status: "Abnormal"
+        }
+    ],
+
+    "PT-000120": [
+        {
+            date: "Sept 21, 2026",
+            bmi: "23.4",
+            temperature: "36.3 °C",
+            heartRate: "74 BPM",
+            spo2: "99 %",
+            bloodPressure: "116/78",
+            status: "Normal"
+        }
+    ],
+
+    "PT-000119": [
+        {
+            date: "Sept 20, 2026",
+            bmi: "21.8",
+            temperature: "36.5 °C",
+            heartRate: "76 BPM",
+            spo2: "98 %",
+            bloodPressure: "114/75",
+            status: "Normal"
+        }
+    ]
+
+};
+
+
+/* =====================================================
+   LOAD SCREENING HISTORY
+===================================================== */
+let combinedHistory = [];
+let currentHistoryPage = 1;
+let currentHistoryPatientId = "";
+const historyRecordsPerPage = 3;
+
+function loadScreeningHistory(patientId) {
+currentHistoryPatientId = patientId;
+    const historyTable =
+        document.getElementById(
+            "historyTable"
+        );
+
+
+    if (!historyTable) {
+        return;
+    }
+
+
+    /* =================================================
+       EXISTING DEMO HISTORY
+    ================================================= */
+
+    const demoHistory =
+        screeningRecords[patientId] || [];
+
+
+    /* =================================================
+       SAVED SCREENING RECORDS
+    ================================================= */
+
+    const savedRecords =
+        JSON.parse(
+            localStorage.getItem("screeningRecords")
+        ) || [];
+
+
+    const savedHistory =
+        savedRecords
+            .filter(function (record) {
+
+                return record.patientId === patientId;
+
+            })
+            .map(function (record) {
+
+                return {
+
+                    date:
+                        record.date || "—",
+
+                    time:
+                        record.time || "—",
+
+                    bmi:
+                        record.bmi || "—",
+
+                    temperature:
+                        record.temperature || "—",
+
+                    heartRate:
+                        record.heartRate || "—",
+
+                    spo2:
+                        record.spo2 || "—",
+
+                    bloodPressure:
+                        record.bloodPressure || "—",
+
+                    status:
+                        record.status || "Normal"
+
+                };
+
+            });
+
+
+    /* =================================================
+       COMBINE DEMO + SAVED HISTORY
+    ================================================= */
+
+    combinedHistory = [
+    ...demoHistory
+];
+
+
+    savedHistory.forEach(function (savedRecord) {
+
+        const normalizeDate =
+            function (date) {
+
+                return date
+                    .replace(
+                        /^Sept /,
+                        "September "
+                    );
+
+            };
+
+const duplicate =
+    combinedHistory.some(
+        function (existingRecord) {
+
+            const existingBP =
+                (existingRecord.bloodPressure || "")
+                    .replace(" mmHg", "")
+                    .trim();
+
+
+            const savedBP =
+                (savedRecord.bloodPressure || "")
+                    .replace(" mmHg", "")
+                    .trim();
+
+
+            return (
+
+                normalizeDate(
+                    existingRecord.date
+                ) ===
+                normalizeDate(
+                    savedRecord.date
+                )
+
+                &&
+
+                existingRecord.bmi ===
+                savedRecord.bmi
+
+                &&
+
+                existingBP ===
+                savedBP
+
+            );
+
+        }
+    );
+
+
+        if (!duplicate) {
+
+            combinedHistory.push(
+                savedRecord
+            );
+
+        }
+
+    });
+
+
+    /* =================================================
+       NO HISTORY
+    ================================================= */
+
+    if (combinedHistory.length === 0) {
+
+        historyTable.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="8"
+                    style="
+                        text-align:center;
+                        padding:30px;
+                        color:var(--muted);
+                    "
+                >
+                    No screening records found
+                    for this patient.
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+    }
+currentHistoryPage = 1;
+renderHistoryPage(combinedHistory);
+}
+ /* =================================================
+   SCREENING HISTORY PAGINATION
+================================================= */
+
+
+function renderHistoryPage(records) {
+
+    const historyTable =
+        document.getElementById(
+            "historyTable"
+        );
+
+    const start =
+        (currentHistoryPage - 1) *
+        historyRecordsPerPage;
+
+    const end =
+        start + historyRecordsPerPage;
+
+    const pageRecords =
+        records.slice(start, end);
+
+    historyTable.innerHTML =
+        pageRecords.map(
+            function (record) {
+
+                let statusClass =
+                    "normal-badge";
+
+                if (record.status === "Caution") {
+                    statusClass =
+                        "caution-badge";
+                }
+
+                if (record.status === "Abnormal") {
+                    statusClass =
+                        "abnormal-badge";
+                }
+
+                return `
+
+                    <tr>
+
+                        <td>
+                            ${record.date}
+                        </td>
+
+                        <td>
+                            ${record.bmi}
+                        </td>
+
+                        <td>
+                            ${record.temperature}
+                        </td>
+
+                        <td>
+                            ${record.heartRate}
+                        </td>
+
+                        <td>
+                            ${record.spo2}
+                        </td>
+
+                        <td>
+                            ${record.bloodPressure}
+                        </td>
+
+                        <td>
+                            <span
+                                class="badge ${statusClass}"
+                            >
+                                ${record.status}
+                            </span>
+                        </td>
+
+                        <td>
+                            <button
+                                type="button"
+                                class="history-view-button"
+                               onclick='viewHistoryRecord("${currentHistoryPatientId}", ${JSON.stringify(record)})'
+                            >
+                                View
+                            </button>
+                        </td>
+
+                    </tr>
+
+                `;
+
+            }
+        ).join("");
+
+    renderHistoryPagination(records);
+}
+
+
+function renderHistoryPagination(records) {
+
+    const historyTable =
+        document.getElementById(
+            "historyTable"
+        );
+
+    const totalPages =
+        Math.ceil(
+            records.length /
+            historyRecordsPerPage
+        );
+
+    let pagination =
+        document.getElementById(
+            "historyPagination"
+        );
+
+    if (!pagination) {
+        pagination =
+            document.createElement("div");
+
+        pagination.id =
+            "historyPagination";
+
+        pagination.className =
+            "profile-pagination";
+
+        historyTable
+            .closest(".profile-panel")
+            .appendChild(pagination);
+    }
+
+    if (totalPages <= 1) {
+        pagination.innerHTML = "";
+        return;
+    }
+
+    let html = "";
+
+    if (currentHistoryPage > 1) {
+        html += `
+            <button
+                type="button"
+                onclick="changeHistoryPage(${currentHistoryPage - 1})"
+            >
+                ‹
+            </button>
+        `;
+    }
+
+    for (
+        let page = 1;
+        page <= totalPages;
+        page++
+    ) {
+
+        html += `
+            <button
+                type="button"
+                class="${page === currentHistoryPage ? "active" : ""}"
+                onclick="changeHistoryPage(${page})"
+            >
+                ${page}
+            </button>
+        `;
+
+    }
+
+    if (currentHistoryPage < totalPages) {
+        html += `
+            <button
+                type="button"
+                onclick="changeHistoryPage(${currentHistoryPage + 1})"
+            >
+                ›
+            </button>
+        `;
+    }
+
+    pagination.innerHTML = html;
+}
+
+
+window.changeHistoryPage = function(page) {
+
+    currentHistoryPage = page;
+
+    renderHistoryPage(combinedHistory);
+};
+
+/* =====================================================
+   VIEW SCREENING HISTORY RECORD
+===================================================== */
+
+function viewHistoryRecord(patientId, record) {
+
+    const selectedRecord = {
+
+        patientId:
+            patientId,
+
+        name:
+            record.name || "",
+
+        initials:
+            record.initials || "",
+
+        date:
+            record.date || "",
+
+        time:
+            record.time || "",
+
+        weight:
+            record.weight || "",
+
+        height:
+            record.height || "",
+
+        bmi:
+            record.bmi || "",
+
+        temperature:
+            record.temperature || "",
+
+        spo2:
+            record.spo2 || "",
+
+        heartRate:
+            record.heartRate || "",
+
+        bloodPressure:
+            record.bloodPressure || "",
+
+        status:
+            record.status || "Normal"
+
+    };
+
+
+    sessionStorage.setItem(
+        "selectedScreeningRecord",
+        JSON.stringify(selectedRecord)
+    );
+
+
+    window.location.href =
+        "screening-result.html?id=" +
+        patientId;
+
+}
+/* =====================================================
+   INITIALIZE SCREENING HISTORY
+===================================================== */
+
+loadScreeningHistory(patientId);
+
+</script>
+<script>
+
+function loadPatientsProfile() {
+
+    const profile = JSON.parse(
+        localStorage.getItem('healthScreenProfile')
+    );
+
+    if (!profile) {
+        return;
+    }
+
+    const initials = profile.name
+        .trim()
+        .split(/\s+/)
+        .map(function (word) {
+            return word.charAt(0);
+        })
+        .join('')
+        .substring(0, 2)
+        .toUpperCase();
+
+
+    const sidebarName =
+        document.getElementById('sidebarProfileName');
+
+    if (sidebarName) {
+        sidebarName.textContent = profile.name;
+    }
+
+
+    const sidebarAvatar =
+        document.getElementById('sidebarProfileAvatar');
+
+    if (sidebarAvatar) {
+        sidebarAvatar.textContent = initials;
+    }
+
+}
+
+
+document.addEventListener(
+    'DOMContentLoaded',
+    loadPatientsProfile
+);
+
+</script>
+
+</body>
+
+</html>

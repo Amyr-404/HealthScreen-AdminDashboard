@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | HealthScreen</title>
+
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <!-- LEFT SIDE -->
+        <section class="login-brand">
+
+            <div class="brand-content">
+
+                <div class="brand-logo">
+                    ♥
+                </div>
+
+                <h1>HealthScreen</h1>
+
+                <p class="brand-subtitle">
+                    Health Screening Monitoring System
+                </p>
+
+                <div class="brand-line"></div>
+
+                <p class="brand-description">
+                    A digital health screening and monitoring
+                    platform designed to support community-based
+                    healthcare services.
+                </p>
+
+                <div class="brand-features">
+
+                    <div class="feature">
+                        <span>✓</span>
+                        <p>Patient Screening Records</p>
+                    </div>
+
+                    <div class="feature">
+                        <span>✓</span>
+                        <p>Health Monitoring</p>
+                    </div>
+
+                    <div class="feature">
+                        <span>✓</span>
+                        <p>Secure Administrative Access</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="brand-footer">
+                Community-Based Healthcare Monitoring
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+        <section class="login-section">
+
+            <div class="login-card">
+
+                <div class="mobile-logo">
+                    ♥
+                </div>
+
+                <div class="login-heading">
+
+                    <h2>Welcome Back</h2>
+
+                    <p>
+                        Sign in to access the administrator dashboard.
+                    </p>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                👤
+                            </span>
+
+                            <input
+                                type="text"
+                                id="username"
+                                placeholder="Enter your username"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="password-label">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <a href="#">
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                🔒
+                            </span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="show-password"
+                                id="showPassword"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ERROR MESSAGE -->
+                    <div
+                        class="login-message"
+                        id="loginMessage"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        Sign In
+                    </button>
+
+
+                    <div class="login-divider">
+                        <span>AUTHORIZED PERSONNEL ONLY</span>
+                    </div>
+
+
+                    <p class="security-note">
+                        Your account credentials are required to
+                        access patient information and administrative
+                        functions.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script>
+    const loginForm = document.getElementById("loginForm");
+    const loginMessage = document.getElementById("loginMessage");
+
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+
+    const showPasswordButton =
+        document.getElementById("showPassword");
+
+
+    loginForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value;
+
+        loginMessage.textContent = "";
+
+
+        if (username === "admin" && password === "admin123") {
+
+            sessionStorage.setItem(
+                "healthscreenAdmin",
+                "true"
+            );
+
+            window.location.href = "dashboard.html";
+
+        } else {
+
+            loginMessage.textContent =
+                "Invalid username or password.";
+
+            passwordInput.value = "";
+        }
+
+    });
+
+
+    showPasswordButton.addEventListener(
+        "click",
+        function() {
+
+            if (passwordInput.type === "password") {
+
+                passwordInput.type = "text";
+                showPasswordButton.textContent = "🙈";
+
+            } else {
+
+                passwordInput.type = "password";
+                showPasswordButton.textContent = "👁";
+
+            }
+
+        }
+    );
+</script>
+
+</body>
+
+</html>

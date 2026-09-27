@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | Health Screening Admin</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+<div class="logo-area">
+    <img src="images/healthscreen-sidebar-logo-transparent.png"
+         alt="HealthScreen"
+         class="sidebar-logo-full">
+
+    <img src="images/healthscreen-sidebar-icon-transparent.png"
+         alt="HealthScreen"
+         class="sidebar-logo-icon">
+</div>
+   <nav class="navigation">
+
+    <a href="dashboard.html" class="nav-item">
+        <img src="images/dashboard-sidebar-icon.png"
+             alt="Dashboard"
+             class="nav-icon-image">
+        <span>Dashboard</span>
+    </a>
+
+    <a href="patients.html" class="nav-item">
+        <img src="images/patients-sidebar-icon.png"
+             alt="Patients"
+             class="nav-icon-image">
+        <span>Patients</span>
+    </a>
+
+    <a href="screening-records.html" class="nav-item">
+        <img src="images/screening-records-sidebar-icon.png"
+             alt="Screening Records"
+             class="nav-icon-image">
+        <span>Screening Records</span>
+    </a>
+
+    <a href="patient-history.html" class="nav-item">
+        <img src="images/patient-history-sidebar-icon.png"
+             alt="Patient History"
+             class="nav-icon-image">
+        <span>Patient History</span>
+    </a>
+
+    <a href="reports.html" class="nav-item active">
+        <img src="images/reports-sidebar-icon.png"
+             alt="Reports"
+             class="nav-icon-image">
+        <span>Reports</span>
+    </a>
+
+    <a href="settings.html" class="nav-item">
+        <img src="images/settings-sidebar-icon.png"
+             alt="Settings"
+             class="nav-icon-image">
+        <span>Settings</span>
+    </a>
+
+</nav>
+
+    <div class="system-status">
+        <span class="status-dot"></span>
+        <div>
+            <strong>System Online</strong>
+            <small>All services operational</small>
+        </div>
+    </div>
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-profile">
+    <div class="profile-avatar" id="sidebarProfileAvatar">A</div>
+
+    <div class="profile-info">
+        <strong id="sidebarProfileName">Administrator</strong>
+        <span>System Admin</span>
+    </div>
+</div>
+
+        <a href="index.html" class="logout">
+            <span>⇥</span>
+            Logout
+        </a>
+
+    </div>
+
+</aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+
+
+        <!-- CONTENT -->
+        <section class="page-content reports-page-content">
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+
+                <div>
+                    <h2>Reports</h2>
+                    <p>Summary of recorded health screenings</p>
+                </div>
+
+                <button class="report-print-button" onclick="window.print()">
+                    🖨 Print Report
+                </button>
+
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+            <div class="report-summary-grid">
+
+                <div class="report-summary-card">
+                    <div class="report-card-icon total-icon">▤</div>
+
+                    <div>
+                        <span class="report-card-label">Total Screenings</span>
+                        <strong id="totalScreenings">0</strong>
+                        <small>Recorded screenings</small>
+                    </div>
+                </div>
+
+
+                <div class="report-summary-card">
+                    <div class="report-card-icon normal-icon">✓</div>
+
+                    <div>
+                        <span class="report-card-label">Normal</span>
+                        <strong id="normalCount">0</strong>
+                        <small id="normalPercentage">0%</small>
+                    </div>
+                </div>
+
+
+                <div class="report-summary-card">
+                    <div class="report-card-icon caution-icon">!</div>
+
+                    <div>
+                        <span class="report-card-label">Caution</span>
+                        <strong id="cautionCount">0</strong>
+                        <small id="cautionPercentage">0%</small>
+                    </div>
+                </div>
+
+
+                <div class="report-summary-card">
+                    <div class="report-card-icon abnormal-icon">!</div>
+
+                    <div>
+                        <span class="report-card-label">Abnormal</span>
+                        <strong id="abnormalCount">0</strong>
+                        <small id="abnormalPercentage">0%</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- STATUS BREAKDOWN -->
+            <div class="report-section-grid">
+
+                <div class="report-panel">
+
+                    <div class="report-panel-header">
+                        <div>
+                            <h3>Screening Status</h3>
+                            <p>Distribution of screening results</p>
+                        </div>
+                    </div>
+
+                    <div class="status-breakdown">
+
+                        <div class="status-row">
+
+                            <div class="status-row-label">
+                                <span class="status-indicator normal"></span>
+                                Normal
+                            </div>
+
+                            <div class="status-progress">
+                                <div
+                                    class="status-progress-fill normal-fill"
+                                    id="normalBar">
+                                </div>
+                            </div>
+
+                            <strong id="normalBarText">0%</strong>
+
+                        </div>
+
+
+                        <div class="status-row">
+
+                            <div class="status-row-label">
+                                <span class="status-indicator caution"></span>
+                                Caution
+                            </div>
+
+                            <div class="status-progress">
+                                <div
+                                    class="status-progress-fill caution-fill"
+                                    id="cautionBar">
+                                </div>
+                            </div>
+
+                            <strong id="cautionBarText">0%</strong>
+
+                        </div>
+
+
+                        <div class="status-row">
+
+                            <div class="status-row-label">
+                                <span class="status-indicator abnormal"></span>
+                                Abnormal
+                            </div>
+
+                            <div class="status-progress">
+                                <div
+                                    class="status-progress-fill abnormal-fill"
+                                    id="abnormalBar">
+                                </div>
+                            </div>
+
+                            <strong id="abnormalBarText">0%</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REPORT INFORMATION -->
+                <div class="report-panel">
+
+                    <div class="report-panel-header">
+                        <div>
+                            <h3>Report Information</h3>
+                            <p>Current system data</p>
+                        </div>
+                    </div>
+
+                    <div class="report-information">
+
+                        <div class="report-info-row">
+                            <span>Report Period</span>
+                            <strong>September 2026</strong>
+                        </div>
+
+                        <div class="report-info-row">
+                            <span>Patients with Records</span>
+                            <strong id="patientsWithRecords">0</strong>
+                        </div>
+
+                        <div class="report-info-row">
+                            <span>Latest Screening</span>
+                            <strong id="latestScreening">—</strong>
+                        </div>
+
+                        <div class="report-info-row">
+                            <span>Generated</span>
+                            <strong id="generatedDate">—</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECENT SCREENINGS -->
+            <div class="report-panel recent-report-panel">
+
+    <div class="report-panel-header">
+
+        <div>
+            <h3>Recent Screening Activity</h3>
+            <p>Latest recorded screening results</p>
+        </div>
+
+        <span class="report-results-count" id="reportResultsCount">
+            0 records
+        </span>
+
+    </div>
+
+    <!-- REPORT FILTERS -->
+    <div class="report-filters">
+
+        <div class="report-filter-group search-filter">
+
+            <label for="reportSearch">
+                Search Patient
+            </label>
+
+            <div class="report-search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="reportSearch"
+                    placeholder="Search name or patient ID..."
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="report-filter-group">
+
+            <label for="reportStatus">
+                Status
+            </label>
+
+            <select id="reportStatus">
+
+                <option value="All">All Statuses</option>
+                <option value="Normal">Normal</option>
+                <option value="Caution">Caution</option>
+                <option value="Abnormal">Abnormal</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="report-filter-group">
+
+            <label for="reportDate">
+                Date
+            </label>
+
+            <select id="reportDate">
+
+                <option value="All">All Dates</option>
+                <option value="September 23, 2026">
+                    September 23, 2026
+                </option>
+                <option value="September 22, 2026">
+                    September 22, 2026
+                </option>
+                <option value="September 21, 2026">
+                    September 21, 2026
+                </option>
+                <option value="September 20, 2026">
+                    September 20, 2026
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="clear-report-filters"
+            onclick="clearReportFilters()"
+        >
+            Clear Filters
+        </button>
+
+    </div>
+
+
+                <div class="report-table-wrapper">
+
+                    <table class="report-table">
+
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Patient</th>
+                                <th>Patient ID</th>
+                                <th>BMI</th>
+                                <th>Temperature</th>
+                                <th>SpO₂</th>
+                                <th>Heart Rate</th>
+                                <th>Blood Pressure</th>
+                                <th>Status</th>
+                            <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="reportTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="report-pagination" id="reportPagination"></div>
+
+            </div>
+
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+
+let screeningRecords = [];
+
+function loadScreeningRecords() {
+
+    const savedRecords =
+        JSON.parse(
+            localStorage.getItem("screeningRecords")
+        ) || [];
+
+    screeningRecords = savedRecords.map(function(record) {
+
+        return {
+            date: record.date || "",
+            time: record.time || "",
+            name: record.name || "",
+            id: record.patientId || record.id || "",
+            bmi: record.bmi || "",
+            temperature: record.temperature || "",
+            spo2: record.spo2 || "",
+            heartRate: record.heartRate || "",
+            bp: record.bloodPressure || record.bp || "",
+            status: record.status || "Normal"
+        };
+
+    });
+
+}
+
+
+// ===============================
+// CALCULATE REPORT STATISTICS
+// ===============================
+
+function loadReportStatistics() {
+
+    const total = screeningRecords.length;
+
+    const normal = screeningRecords.filter(
+        record => record.status === "Normal"
+    ).length;
+
+    const caution = screeningRecords.filter(
+        record => record.status === "Caution"
+    ).length;
+
+    const abnormal = screeningRecords.filter(
+        record => record.status === "Abnormal"
+    ).length;
+
+
+    document.getElementById("totalScreenings").textContent = total;
+
+    document.getElementById("normalCount").textContent = normal;
+
+    document.getElementById("cautionCount").textContent = caution;
+
+    document.getElementById("abnormalCount").textContent = abnormal;
+
+
+    const normalPercentage = total
+        ? Math.round((normal / total) * 100)
+        : 0;
+
+    const cautionPercentage = total
+        ? Math.round((caution / total) * 100)
+        : 0;
+
+    const abnormalPercentage = total
+        ? Math.round((abnormal / total) * 100)
+        : 0;
+
+
+    document.getElementById("normalPercentage").textContent =
+        normalPercentage + "% of screenings";
+
+    document.getElementById("cautionPercentage").textContent =
+        cautionPercentage + "% of screenings";
+
+    document.getElementById("abnormalPercentage").textContent =
+        abnormalPercentage + "% of screenings";
+
+
+    document.getElementById("normalBar").style.width =
+        normalPercentage + "%";
+
+    document.getElementById("cautionBar").style.width =
+        cautionPercentage + "%";
+
+    document.getElementById("abnormalBar").style.width =
+        abnormalPercentage + "%";
+
+
+    document.getElementById("normalBarText").textContent =
+        normalPercentage + "%";
+
+    document.getElementById("cautionBarText").textContent =
+        cautionPercentage + "%";
+
+    document.getElementById("abnormalBarText").textContent =
+        abnormalPercentage + "%";
+
+
+    // Patients with records
+    const uniquePatients = new Set(
+        screeningRecords.map(record => record.id)
+    );
+
+    document.getElementById("patientsWithRecords").textContent =
+        uniquePatients.size;
+
+
+    // Latest screening
+    document.getElementById("latestScreening").textContent =
+        screeningRecords[0].date;
+
+
+    // Generated date
+    document.getElementById("generatedDate").textContent =
+        new Date().toLocaleDateString(
+            "en-US",
+            {
+                month: "short",
+                day: "numeric",
+                year: "numeric"
+            }
+        );
+}
+
+
+// ===============================
+// LOAD REPORT TABLE
+// ===============================
+let currentReportPage = 1;
+const reportsPerPage = 3;
+function loadReportTable(resetPage = true) {
+
+    if (resetPage) {
+        currentReportPage = 1;
+    }
+
+    const tableBody =
+        document.getElementById("reportTableBody");
+
+    const searchValue =
+        document.getElementById("reportSearch").value
+        .toLowerCase()
+        .trim();
+
+    const statusValue =
+        document.getElementById("reportStatus").value;
+
+    const dateValue =
+        document.getElementById("reportDate").value;
+
+
+    const filteredRecords = screeningRecords.filter(record => {
+
+        const matchesSearch =
+            record.name.toLowerCase().includes(searchValue) ||
+            record.id.toLowerCase().includes(searchValue);
+
+        const matchesStatus =
+            statusValue === "All" ||
+            record.status === statusValue;
+
+        const matchesDate =
+            dateValue === "All" ||
+            record.date === dateValue;
+
+        return (
+            matchesSearch &&
+            matchesStatus &&
+            matchesDate
+        );
+
+    });
+
+
+   tableBody.innerHTML = "";
+
+const totalPages =
+    Math.ceil(
+        filteredRecords.length /
+        reportsPerPage
+    );
+
+if (
+    currentReportPage > totalPages &&
+    totalPages > 0
+) {
+    currentReportPage = totalPages;
+}
+
+const startIndex =
+    (currentReportPage - 1) *
+    reportsPerPage;
+
+const endIndex =
+    startIndex +
+    reportsPerPage;
+
+const pageRecords =
+    filteredRecords.slice(
+        startIndex,
+        endIndex
+    );
+
+pageRecords.forEach(record => {
+        let statusClass = "";
+
+        if (record.status === "Normal") {
+            statusClass = "normal";
+        }
+
+        if (record.status === "Caution") {
+            statusClass = "caution";
+        }
+
+        if (record.status === "Abnormal") {
+            statusClass = "abnormal";
+        }
+
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+
+            <td>
+                <div class="report-date">
+                    <strong>${record.date}</strong>
+                    <small>${record.time}</small>
+                </div>
+            </td>
+
+            <td>
+                <strong>${record.name}</strong>
+            </td>
+
+            <td>
+                ${record.id}
+            </td>
+
+            <td>
+                ${record.bmi}
+            </td>
+
+            <td>
+                ${record.temperature}
+            </td>
+
+            <td>
+                ${record.spo2}
+            </td>
+
+            <td>
+                ${record.heartRate}
+            </td>
+
+            <td>
+                ${record.bp}
+            </td>
+
+            <td>
+                <span class="report-status ${statusClass}">
+                    ${record.status}
+                </span>
+            </td>
+
+            <td>
+                <button
+                    type="button"
+                    class="report-view-button"
+                    onclick="viewReport('${record.id}')"
+                >
+                    View
+                </button>
+            </td>
+
+        `;
+
+        tableBody.appendChild(row);
+
+    });
+
+
+    document.getElementById("reportResultsCount").textContent =
+        filteredRecords.length +
+        (filteredRecords.length === 1 ? " record" : " records");
+        renderReportPagination(totalPages);
+
+    if (filteredRecords.length === 0) {
+
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="10" class="report-no-results">
+                    No screening records found.
+                </td>
+            </tr>
+        `;
+
+    }
+
+}
+function renderReportPagination(totalPages) {
+
+    const pagination =
+        document.getElementById(
+            "reportPagination"
+        );
+
+    if (!pagination) {
+        return;
+    }
+
+    if (totalPages <= 1) {
+        pagination.innerHTML = "";
+        return;
+    }
+
+    let html = "";
+
+    html += `
+        <button
+            onclick="changeReportPage(${currentReportPage - 1})"
+            ${currentReportPage === 1 ? "disabled" : ""}
+        >
+            ‹
+        </button>
+    `;
+
+    for (
+        let page = 1;
+        page <= totalPages;
+        page++
+    ) {
+
+        html += `
+            <button
+                class="${page === currentReportPage ? "page-active" : ""}"
+                onclick="changeReportPage(${page})"
+            >
+                ${page}
+            </button>
+        `;
+    }
+
+    html += `
+        <button
+            onclick="changeReportPage(${currentReportPage + 1})"
+            ${currentReportPage === totalPages ? "disabled" : ""}
+        >
+            ›
+        </button>
+    `;
+
+    pagination.innerHTML = html;
+}
+
+
+function changeReportPage(page) {
+
+    currentReportPage = page;
+
+    loadReportTable(false);
+
+}
+function clearReportFilters() {
+
+    document.getElementById("reportSearch").value = "";
+
+    document.getElementById("reportStatus").value = "All";
+
+    document.getElementById("reportDate").value = "All";
+
+    loadReportTable();
+}
+
+
+function viewReport(patientId) {
+    window.location.href =
+        "screening-result.html?id=" +
+        patientId +
+        "&source=reports";
+}
+
+
+// Search while typing
+document
+    .getElementById("reportSearch")
+    .addEventListener("input", loadReportTable);
+
+
+// Status filter
+document
+    .getElementById("reportStatus")
+    .addEventListener("change", loadReportTable);
+
+
+// Date filter
+document
+    .getElementById("reportDate")
+    .addEventListener("change", loadReportTable);
+
+
+// ===============================
+// INITIALIZE
+// ===============================
+
+loadScreeningRecords();
+loadReportStatistics();
+loadReportTable();
+
+function loadReportsProfile() {
+    const profile = JSON.parse(
+        localStorage.getItem('healthScreenProfile')
+    );
+
+    if (!profile) return;
+
+    const initials = profile.name
+        .trim()
+        .split(/\s+/)
+        .map(function(word) {
+            return word.charAt(0);
+        })
+        .join('')
+        .substring(0, 2)
+        .toUpperCase();
+
+    const sidebarName =
+        document.getElementById('sidebarProfileName');
+
+    if (sidebarName) {
+        sidebarName.textContent = profile.name;
+    }
+
+    const sidebarAvatar =
+        document.getElementById('sidebarProfileAvatar');
+
+    if (sidebarAvatar) {
+        sidebarAvatar.textContent = initials;
+    }
+}
+
+document.addEventListener(
+    'DOMContentLoaded',
+    loadReportsProfile
+);
+</script>
+
+</body>
+</html>
