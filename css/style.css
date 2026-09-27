@@ -7373,3 +7373,71 @@ td {
     }
 
 }
+
+@media (max-width: 768px) {
+
+    /* ---------- MOBILE CONTENT ---------- */
+
+    .dashboard {
+        padding: 12px 10px 20px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .dashboard .welcome-card {
+        width: 100%;
+        min-height: 130px;
+        padding: 18px 16px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    .dashboard .welcome-card h1 {
+        font-size: 24px;
+    }
+
+    .dashboard .welcome-card p {
+        font-size: 13px;
+    }
+
+    /* Statistics */
+    .dashboard .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dashboard .stat-card {
+        width: 100%;
+        min-height: 82px;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+    /* Charts */
+    .dashboard .content-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+
+    .dashboard .content-grid .panel {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 14px;
+    }
+
+    .dashboard .chart {
+        width: 100%;
+        height: 190px;
+    }
+
+    /* Recent screenings */
+    .dashboard .recent-panel {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow-x: auto;
+    }
+
+}
