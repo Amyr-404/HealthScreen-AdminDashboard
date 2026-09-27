@@ -7441,3 +7441,202 @@ td {
     }
 
 }
+
+/* =========================================================
+   MOBILE SIDEBAR EXPANSION + COMPACT DASHBOARD
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =========================
+       SIDEBAR
+       ========================= */
+
+    .sidebar {
+        width: 64px !important;
+        min-width: 64px !important;
+        max-width: 64px !important;
+        transition: width 0.25s ease,
+                    min-width 0.25s ease,
+                    max-width 0.25s ease !important;
+        z-index: 1000;
+    }
+
+    /* Expand sidebar when interacting with it */
+    .sidebar:focus-within {
+        width: 240px !important;
+        min-width: 240px !important;
+        max-width: 240px !important;
+    }
+
+    /* Main page remains in place */
+    .main-content,
+    .sidebar:hover + .main-content,
+    .sidebar:focus-within + .main-content {
+        margin-left: 64px !important;
+        width: calc(100% - 64px) !important;
+        max-width: calc(100% - 64px) !important;
+    }
+
+    /* ---------- LOGO ---------- */
+
+    .sidebar .sidebar-logo-full {
+        display: none !important;
+    }
+
+    .sidebar .sidebar-logo-icon {
+        display: block !important;
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .sidebar:focus-within .sidebar-logo-icon {
+        display: none !important;
+    }
+
+    .sidebar:focus-within .sidebar-logo-full {
+        display: block !important;
+        width: 198px !important;
+        height: auto !important;
+    }
+
+    /* ---------- NAVIGATION ---------- */
+
+    .sidebar .nav-item {
+        justify-content: center !important;
+        padding: 10px 8px !important;
+    }
+
+    .sidebar .nav-item span:not(.nav-icon) {
+        display: none !important;
+    }
+
+    .sidebar .nav-icon-image {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    /* Expanded navigation */
+
+    .sidebar:focus-within .nav-item {
+        justify-content: flex-start !important;
+        padding: 10px 16px !important;
+    }
+
+    .sidebar:focus-within .nav-item span:not(.nav-icon) {
+        display: inline !important;
+    }
+
+    /* ---------- SYSTEM STATUS ---------- */
+
+    .sidebar .system-status {
+        justify-content: center !important;
+        padding: 10px 6px !important;
+        margin: 8px 6px !important;
+    }
+
+    .sidebar .system-status > div {
+        display: none !important;
+    }
+
+    .sidebar:focus-within .system-status {
+        justify-content: flex-start !important;
+        padding: 12px 14px !important;
+        margin: 10px 16px 0 !important;
+    }
+
+    .sidebar:focus-within .system-status > div {
+        display: block !important;
+    }
+
+    /* ---------- ADMIN ---------- */
+
+    .sidebar .admin-profile {
+        justify-content: center !important;
+    }
+
+    .sidebar .profile-info {
+        display: none !important;
+    }
+
+    .sidebar:focus-within .admin-profile {
+        justify-content: flex-start !important;
+    }
+
+    .sidebar:focus-within .profile-info {
+        display: block !important;
+    }
+
+    /* ---------- LOGOUT ---------- */
+
+    .sidebar .logout {
+        width: 44px !important;
+        height: 40px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        justify-content: center !important;
+    }
+
+    .sidebar:focus-within .logout {
+        width: auto !important;
+        height: auto !important;
+        margin: 0 16px !important;
+        padding: 10px 16px !important;
+        justify-content: flex-start !important;
+    }
+
+    /* =========================
+       COMPACT DASHBOARD
+       ========================= */
+
+    .dashboard {
+        padding: 10px 8px 16px !important;
+    }
+
+    .dashboard .welcome-card {
+        min-height: 110px;
+        padding: 14px 16px;
+        margin-bottom: 8px;
+    }
+
+    .dashboard .welcome-card h1 {
+        font-size: 22px;
+        line-height: 1.15;
+    }
+
+    .dashboard .welcome-card p {
+        font-size: 12px;
+        line-height: 1.4;
+        margin-top: 6px;
+    }
+
+    .dashboard .stats-grid {
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    .dashboard .stat-card {
+        min-height: 70px;
+        padding: 10px 12px;
+    }
+
+    .dashboard .stat-card h3 {
+        font-size: 14px;
+    }
+
+    .dashboard .stat-card .stat-value {
+        font-size: 28px;
+    }
+
+    .dashboard .stat-card p {
+        font-size: 11px;
+    }
+
+    .dashboard .content-grid {
+        gap: 8px;
+    }
+
+    .dashboard .content-grid .panel {
+        padding: 12px;
+    }
+}
