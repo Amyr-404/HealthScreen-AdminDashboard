@@ -8457,3 +8457,233 @@ td {
     }
 
 }
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       ADMIN PROFILE + LOGOUT — MOBILE FINAL
+       ===================================================== */
+
+    .sidebar .sidebar-bottom,
+    .sidebar:hover .sidebar-bottom,
+    .sidebar.mobile-expanded .sidebar-bottom {
+
+        position: fixed !important;
+
+        right: 10px !important;
+        bottom: 10px !important;
+
+        width: 285px !important;
+        min-width: 285px !important;
+        height: 56px !important;
+
+        margin: 0 !important;
+        padding: 6px 8px !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        gap: 10px !important;
+
+        background: white !important;
+
+        border-radius: 14px !important;
+
+        box-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.14) !important;
+
+        z-index: 1100 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ADMIN PROFILE
+       ----------------------------------------------------- */
+
+    .sidebar .admin-profile,
+    .sidebar:hover .admin-profile,
+    .sidebar.mobile-expanded .admin-profile {
+
+        display: flex !important;
+
+        flex: 1 1 auto !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+
+        height: 44px !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /* Avatar */
+    .sidebar .admin-profile .profile-avatar,
+    .sidebar:hover .admin-profile .profile-avatar,
+    .sidebar.mobile-expanded .admin-profile .profile-avatar {
+
+        display: flex !important;
+
+        width: 38px !important;
+        height: 38px !important;
+
+        min-width: 38px !important;
+        min-height: 38px !important;
+
+        flex-shrink: 0 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+
+    /* Profile information */
+    .sidebar .admin-profile .profile-info,
+    .sidebar:hover .admin-profile .profile-info,
+    .sidebar.mobile-expanded .admin-profile .profile-info {
+
+        display: flex !important;
+
+        width: auto !important;
+        min-width: 90px !important;
+
+        height: auto !important;
+
+        flex: 1 1 auto !important;
+
+        flex-direction: column !important;
+
+        align-items: flex-start !important;
+        justify-content: center !important;
+
+        margin: 0 0 0 8px !important;
+        padding: 0 !important;
+
+        gap: 3px !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+
+    .sidebar .admin-profile .profile-info strong,
+    .sidebar:hover .admin-profile .profile-info strong,
+    .sidebar.mobile-expanded .admin-profile .profile-info strong {
+
+        display: block !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        width: auto !important;
+
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+
+        color: #263238 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    .sidebar .admin-profile .profile-info span,
+    .sidebar:hover .admin-profile .profile-info span,
+    .sidebar.mobile-expanded .admin-profile .profile-info span {
+
+        display: block !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        width: auto !important;
+
+        font-size: 9px !important;
+        line-height: 1.2 !important;
+
+        color: #7b8794 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* -----------------------------------------------------
+       LOGOUT BUTTON
+       ----------------------------------------------------- */
+
+    .sidebar .sidebar-bottom .logout,
+    .sidebar:hover .sidebar-bottom .logout,
+    .sidebar.mobile-expanded .sidebar-bottom .logout {
+
+        display: flex !important;
+
+        flex-shrink: 0 !important;
+
+        width: 72px !important;
+        min-width: 72px !important;
+
+        height: 36px !important;
+        min-height: 36px !important;
+
+        margin: 0 !important;
+        padding: 0 10px !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 5px !important;
+
+        background: #f1f5f9 !important;
+
+        border-radius: 9px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    .sidebar .sidebar-bottom .logout span:first-child,
+    .sidebar:hover .sidebar-bottom .logout span:first-child,
+    .sidebar.mobile-expanded .sidebar-bottom .logout span:first-child {
+
+        display: inline-flex !important;
+
+        font-size: 17px !important;
+        line-height: 1 !important;
+    }
+
+
+    .sidebar .sidebar-bottom .logout span:last-child,
+    .sidebar:hover .sidebar-bottom .logout span:last-child,
+    .sidebar.mobile-expanded .sidebar-bottom .logout span:last-child {
+
+        display: inline !important;
+
+        font-size: 10px !important;
+        font-weight: 600 !important;
+
+        line-height: 1 !important;
+
+        color: #263238 !important;
+    }
+
+
+    /* Remove any pseudo-element/settings icon */
+    .sidebar .sidebar-bottom::before,
+    .sidebar:hover .sidebar-bottom::before,
+    .sidebar.mobile-expanded .sidebar-bottom::before {
+
+        display: none !important;
+        content: none !important;
+    }
+
+}
