@@ -6966,64 +6966,83 @@ td {
         min-width: 0;
     }
 
-    /* ---------- SIDEBAR ---------- */
+    /* ---------- MOBILE SIDEBAR ---------- */
 
-    .sidebar {
-        width: 68px;
-        overflow: hidden;
-    }
+.sidebar {
+    width: 64px !important;
+    min-width: 64px !important;
+    max-width: 64px !important;
+}
 
-    .sidebar:hover {
-        width: 68px;
-    }
+.sidebar:hover {
+    width: 64px !important;
+}
 
-    .sidebar-logo-full,
-    .sidebar .profile-info,
-    .sidebar .logout span:last-child {
-        display: none !important;
-    }
+/* Main content must leave room for the sidebar */
+.main-content {
+    margin-left: 64px !important;
+    width: calc(100% - 64px) !important;
+    max-width: calc(100% - 64px);
+}
 
-    .sidebar-logo-icon {
-        display: block !important;
-        width: 40px;
-        height: 40px;
-    }
+/* Keep only the icon version of the logo */
+.sidebar-logo-full {
+    display: none !important;
+}
 
-    .sidebar .nav-item {
-        justify-content: center;
-        padding: 10px;
-    }
+.sidebar-logo-icon {
+    display: block !important;
+    width: 38px !important;
+    height: 38px !important;
+}
 
-    .sidebar .nav-item span:not(.nav-icon) {
-        display: none;
-    }
+/* Navigation icons */
+.sidebar .nav-item {
+    justify-content: center;
+    padding: 10px 8px;
+}
 
-    .sidebar .nav-icon-image {
-        width: 32px;
-        height: 32px;
-    }
+.sidebar .nav-item span:not(.nav-icon) {
+    display: none !important;
+}
 
-    .sidebar .admin-profile {
-        justify-content: center;
-    }
+.sidebar .nav-icon-image {
+    width: 30px !important;
+    height: 30px !important;
+}
 
-    .sidebar .logout {
-        width: 48px;
-        height: 40px;
-        margin: 0 auto;
-        padding: 0;
-        justify-content: center;
-    }
+/* Profile */
+.sidebar .admin-profile {
+    justify-content: center !important;
+}
 
-    .sidebar .system-status {
-        justify-content: center;
-        padding: 10px;
-        margin: 8px;
-    }
+.sidebar .profile-info {
+    display: none !important;
+}
 
-    .sidebar .system-status > div {
-        display: none;
-    }
+/* Logout */
+.sidebar .logout {
+    width: 44px !important;
+    height: 40px !important;
+    margin: 0 auto;
+    padding: 0 !important;
+    justify-content: center;
+}
+
+.sidebar .logout span:last-child {
+    display: none !important;
+}
+
+/* System status */
+.sidebar .system-status {
+    justify-content: center;
+    padding: 10px 6px;
+    margin: 8px 6px;
+}
+
+.sidebar .system-status > div {
+    display: none !important;
+}
 
     /* ---------- PAGE SPACING ---------- */
 
