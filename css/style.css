@@ -7279,3 +7279,97 @@ td {
     }
 
 }
+
+/* =========================================================
+   MOBILE SIDEBAR FIX
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Keep sidebar collapsed on mobile */
+    .sidebar,
+    .sidebar:hover {
+        width: 64px !important;
+        min-width: 64px !important;
+        max-width: 64px !important;
+    }
+
+    /* Main content starts after the mobile sidebar */
+    .main-content,
+    .sidebar:hover + .main-content {
+        margin-left: 64px !important;
+        width: calc(100% - 64px) !important;
+        max-width: calc(100% - 64px) !important;
+    }
+
+    /* Logo */
+    .sidebar .sidebar-logo-full,
+    .sidebar:hover .sidebar-logo-full {
+        display: none !important;
+    }
+
+    .sidebar .sidebar-logo-icon,
+    .sidebar:hover .sidebar-logo-icon {
+        display: block !important;
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    /* Navigation */
+    .sidebar .nav-item,
+    .sidebar:hover .nav-item {
+        justify-content: center !important;
+        padding: 10px 8px !important;
+    }
+
+    .sidebar .nav-item span:not(.nav-icon),
+    .sidebar:hover .nav-item span:not(.nav-icon) {
+        display: none !important;
+    }
+
+    .sidebar .nav-icon-image,
+    .sidebar:hover .nav-icon-image {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    /* System status */
+    .sidebar .system-status,
+    .sidebar:hover .system-status {
+        justify-content: center !important;
+        padding: 10px 6px !important;
+        margin: 8px 6px !important;
+    }
+
+    .sidebar .system-status > div,
+    .sidebar:hover .system-status > div {
+        display: none !important;
+    }
+
+    /* Administrator */
+    .sidebar .admin-profile,
+    .sidebar:hover .admin-profile {
+        justify-content: center !important;
+    }
+
+    .sidebar .profile-info,
+    .sidebar:hover .profile-info {
+        display: none !important;
+    }
+
+    /* Logout */
+    .sidebar .logout,
+    .sidebar:hover .logout {
+        width: 44px !important;
+        height: 40px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        justify-content: center !important;
+    }
+
+    .sidebar .logout span:last-child,
+    .sidebar:hover .logout span:last-child {
+        display: none !important;
+    }
+
+}
