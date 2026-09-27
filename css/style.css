@@ -6852,3 +6852,95 @@ td {
     font-size: 17px;
 }
 
+/* =========================================
+   SIDEBAR ADMIN PROFILE — FINAL ALIGNMENT
+========================================= */
+
+.sidebar:hover .admin-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.sidebar:hover .profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+.sidebar:hover .profile-info strong {
+    display: block;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.sidebar:hover .profile-info span {
+    display: block;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* =========================================================
+   ADMIN PROFILE — FINAL
+   ========================================================= */
+
+.sidebar .admin-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.sidebar .profile-info {
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar .profile-info strong,
+.sidebar .profile-info span {
+    display: block;
+    white-space: nowrap;
+}
+
+/* Expanded sidebar */
+.sidebar:hover .admin-profile {
+    justify-content: flex-start;
+}
+
+.sidebar:hover .profile-info {
+    display: flex;
+}
+
+.sidebar .admin-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.sidebar .profile-info {
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar .profile-info strong,
+.sidebar .profile-info span {
+    display: block;
+    white-space: nowrap;
+}
+
+.sidebar:hover .admin-profile {
+    justify-content: flex-start;
+}
+
+.sidebar:hover .profile-info {
+    display: flex;
+}
